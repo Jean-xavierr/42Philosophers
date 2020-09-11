@@ -9,7 +9,6 @@ And learn about mutexes, semaphores, and shared memory.
 
 Philosophers introduction in work .... 🐙
 
-
 __Project duration__ : in work ⏳
 
 *Tips and good methodology to do the project at the bottom of the readme*
@@ -31,6 +30,12 @@ __Project duration__ : in work ⏳
 ## Project documentation 📚
 
  __*In build*__   
+
+ __*(Thread & Mutex FR Doc)[https://franckh.developpez.com/tutoriels/posix/pthreads/]*__
+ __*(Thread & Mutex EN video)[https://www.youtube.com/watch?v=9axu8CUvOKY]*__
+
+__*(Semaphore EN video)[https://www.youtube.com/watch?v=ukM_zzrIeXs]*__
+
 
 *I'm working on this project, I update this readme every day, you can check the to do list*
 
