@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:15:50 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/11 18:23:17 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/11 19:27:19 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void		start_display(void)
 {
-	ft_printf("|-------------------------------------------|\n");
-	ft_printf("| Time     | Philo | Event                  |\n");
-	ft_printf("|-------------------------------------------|\n");
+	ft_printf("┌----------┰-------┰-----------------------┐\n");
+	ft_printf("| Time     | Philo | Event                 |\n");
+	ft_printf("|----------┸-------┸-----------------------|\n");
 	
 }
 
@@ -66,7 +66,7 @@ void		print_event(char *time, char **id_philo, int event)
 	{
 		ft_printf(COLOR_RED "is died" COLOR_RESET);
 		ft_printf("             ☠️  |\n");
-		ft_printf("|-------------------------------------------|\n");
+		ft_printf("└------------------------------------------┘\n");
 	}
 }
 

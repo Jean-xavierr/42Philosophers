@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:27:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/11 17:49:03 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/11 19:10:06 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,10 @@ void		*ft_memcpy_n(void *dst, void *src, unsigned int n);
 */
 int			parsing_argument(int ac, char **av);
 
+void		print_clasic_display(char *time, int id_philo, int event);
 void		print_event(char *time, char **id_philo, int event);
 void		print_usage(void);
 void		start_display(void);
+
 
 #endif
