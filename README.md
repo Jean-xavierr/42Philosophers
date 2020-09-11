@@ -31,10 +31,11 @@ __Project duration__ : in work ⏳
 
  __*In build*__   
 
- __*(Thread & Mutex FR Doc)[https://franckh.developpez.com/tutoriels/posix/pthreads/]*__
- __*(Thread & Mutex EN video)[https://www.youtube.com/watch?v=9axu8CUvOKY]*__
+ __*[Thread & Mutex FR Doc](https://franckh.developpez.com/tutoriels/posix/pthreads/)*__
+ 
+ __*[Thread & Mutex EN video](https://www.youtube.com/watch?v=9axu8CUvOKY)*__
 
-__*(Semaphore EN video)[https://www.youtube.com/watch?v=ukM_zzrIeXs]*__
+__*[Semaphore EN video](https://www.youtube.com/watch?v=ukM_zzrIeXs)*__
 
 
 *I'm working on this project, I update this readme every day, you can check the to do list*
