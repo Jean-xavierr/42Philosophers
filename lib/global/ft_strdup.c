@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/15 15:02:18 by jereligi          #+#    #+#             */
-/*   Updated: 2019/11/16 14:11:09 by jereligi         ###   ########.fr       */
+/*   Created: 2020/09/11 15:57:39 by Jeanxavier        #+#    #+#             */
+/*   Updated: 2020/09/11 16:18:51 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../header/philo.h"
 
-char	*ft_strjoin_char(char *s1, char c)
+char	*ft_strdup(char *s1)
 {
 	int		i;
-	char	*dst;
+	char	*dest;
 
-	dst = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 2));
-	if (dst == NULL)
-		return (NULL);
 	i = 0;
+	if (!(dest = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1)))
+		return (NULL);
 	while (s1[i])
 	{
-		dst[i] = s1[i];
+		dest[i] = s1[i];
 		i++;
 	}
-	dst[i++] = c;
-	dst[i] = '\0';
-	return (dst);
+	dest[i] = '\0';
+	return (dest);
 }

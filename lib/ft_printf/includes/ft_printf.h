@@ -6,17 +6,16 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 13:06:37 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/11 14:27:21 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/11 16:32:50 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <unistd.h>
 # include <stdarg.h>
-# include <stdlib.h>
 # include <stdio.h>
+# include "../../header/philo.h"
 
 typedef struct		s_data
 {
@@ -71,10 +70,10 @@ int			ft_len_nb(t_data *data);
 
 /* ---> ft_get_strlen.c <---
 */
-int			ft_strlen(char *s);
 char		*ft_get_string_nb(t_data *data);
 int			ft_strlen_nb_hex(long nb);
 int			ft_get_strlen(t_data *data);
+int			ft_slen(char *s);
 
 /* ---> ft_check_flags.c <---
 */
@@ -82,7 +81,7 @@ void		ft_call_flags_management(t_data *data);
 int			ft_check_flags_zero(int	i, t_data *data);
 int			ft_check_flags_precision(int i, t_data *data);
 
-/* ---> ft_strjoin.c <---
+/* ---> ft_strjoin_char.c <---
 */
 char		*ft_strjoin_char(char *s1, char c);
 
