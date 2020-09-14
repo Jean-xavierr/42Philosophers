@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   uitoemoji.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 15:44:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/11 18:07:53 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/14 11:08:13 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 int			ft_strlen_nb(int nb)
 {
 	int i;
-	
+
 	i = 1;
 	while (nb > 0)
 	{
@@ -58,15 +58,16 @@ int			get_emoji_nb(int nb, char **emoji_nb, char **emojis)
 {
 	int	i;
 	int	tmp_nb;
-	
+
 	i = 0;
 	while (nb > 0)
 	{
-		emoji_nb[i]= ft_strdup("");
+		emoji_nb[i] = ft_strdup("");
 		if (nb > 10)
 		{
 			tmp_nb = nb % 10;
-			emoji_nb[i] = ft_strjoindel(ft_strjoindel(emoji_nb[i], emojis[tmp_nb], 1), " ", 1);
+			emoji_nb[i] = ft_strjoindel(ft_strjoindel(emoji_nb[i],
+			emojis[tmp_nb], 1), " ", 1);
 			nb = nb / 10;
 		}
 		else
@@ -84,7 +85,7 @@ int			get_emoji_nb(int nb, char **emoji_nb, char **emojis)
 char		**ft_strtab_swap(char **emoji_nb, int i)
 {
 	int		n;
-	char 	*tmp;
+	char	*tmp;
 
 	n = 0;
 	while (n < i)

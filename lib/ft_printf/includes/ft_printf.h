@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 13:06:37 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/11 16:32:50 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/14 11:10:00 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,14 @@ typedef struct		s_data
 	int			return_printf;
 }					t_data;
 
-/* ---> ft_printf.c <---
+/* 
+** ---> ft_printf.c <---
 */
 int					ft_check_string(int i, t_data *data);
 int					ft_printf(const char *s, ...);
 
-/* ---> ft_utils.c <---
+/*
+**  ---> ft_utils.c <---
 */
 void				ft_putchar(char c, t_data *data);
 void				ft_reinit_flags(t_data *data);
@@ -100,9 +102,5 @@ char		*ft_itox(unsigned int n, t_data *data);
 /* ---> ft_ultox.c <---
 */
 char		*ft_ultox(unsigned long n);
-
-/* ---> ft_atoi.c <---
-*/
-int			ft_atoi(char *str, int *i);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:15:50 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/11 19:27:19 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/14 12:33:08 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void		start_display(void)
 	ft_printf("┌----------┰-------┰-----------------------┐\n");
 	ft_printf("| Time     | Philo | Event                 |\n");
 	ft_printf("|----------┸-------┸-----------------------|\n");
-	
 }
 
 void		print_time(char *time, int event)
@@ -27,7 +26,7 @@ void		print_time(char *time, int event)
 		ft_printf("|");
 		ft_printf(COLOR_RED " %s" COLOR_RESET, time);
 	}
-	else 
+	else
 		ft_printf("| %s", time);
 }
 
@@ -55,25 +54,41 @@ void		print_event(char *time, char **id_philo, int event)
 	print_time(time, event);
 	print_id_philo(id_philo);
 	if (event == 1)
-		ft_printf("has taken a fork    🍴  |\n");
+		ft_printf("has taken a fork    🍴 |\n");
 	else if (event == 2)
-		ft_printf("is eating           🍜  |\n");
+		ft_printf("is eating           🍜 |\n");
 	else if (event == 3)
-		ft_printf("is sleeping         😴  |\n");
+		ft_printf("is sleeping         😴 |\n");
 	else if (event == 4)
-		ft_printf("is thinking         💭  |\n");
+		ft_printf("is thinking         💭 |\n");
 	else if (event == 5)
 	{
 		ft_printf(COLOR_RED "is died" COLOR_RESET);
-		ft_printf("             ☠️  |\n");
+		ft_printf("              ☠️ |\n");
 		ft_printf("└------------------------------------------┘\n");
 	}
 }
 
-void		print_usage(void)
+void		print_clasic_display(char *time, int id_philo, int event)
 {
-	ft_printf(COLOR_BLUE "Usage :\n" COLOR_RESET);
-	ft_printf(COLOR_RED "\t./philo " COLOR_RESET);
-	ft_printf("number_of_philosopher time_to_die time_to_eat time_to_sleep ");
-	ft_printf("[number_of_time_each_philosophers_must_eat]\n");
+	if (event == 5)
+	{
+		ft_printf(COLOR_RED "%s ", time);
+		ft_printf("%d " COLOR_RESET, id_philo);
+	}
+	else
+	{
+		ft_printf("%s ", time);
+		ft_printf("%d ", id_philo);
+	}
+	if (event == 1)
+		ft_printf("has taken a fork\n");
+	else if (event == 2)
+		ft_printf("is eating\n");
+	else if (event == 3)
+		ft_printf("is sleeping\n");
+	else if (event == 4)
+		ft_printf("is thinking\n");
+	else if (event == 5)
+		ft_printf(COLOR_RED "is died\n" COLOR_RESET);
 }
