@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:53:36 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/14 14:54:26 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/14 15:48:20 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,9 @@ int		fill_struct(int ac, char **av, int prog_arg, t_philo *data_philo)
 	return (0);
 }
 
-int		management_philo(int ac, char **av)
+int		management_philo(int ac, char **av, t_philo *data_philo)
 {
-	int 		prog_arg[0];
-	t_philo		data_philo[0];
+	int			prog_arg[0];
 
 	*prog_arg = 0;
 	if (!check_argument(ac, av, prog_arg))
@@ -40,6 +39,6 @@ int		management_philo(int ac, char **av)
 			return (1);
 	}
 	else
-		ft_printf("parsing error\n");
+		return (1);
 	return (0);
 }
