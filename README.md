@@ -31,7 +31,7 @@ __Project duration__ : in work ⏳
 
  __*In build*__   
 
- __*[Thread & Mutex FR Doc](https://franckh.developpez.com/tutoriels/posix/pthreads/)*__
+ __*[Use pthread (pthread_create | pthread_join) EN video](https://www.youtube.com/watch?v=uA8X5zNOGw8&list=PL9IEJIKnBJjFZxuqyJ9JqVYmuFZHr7CFM&index=2&t=0s)*__
  
  __*[Thread & Mutex EN video](https://www.youtube.com/watch?v=9axu8CUvOKY)*__
 
