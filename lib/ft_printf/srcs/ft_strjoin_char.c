@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin_char.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 16:32:41 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/11 16:32:42 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/15 11:36:06 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ char	*ft_strjoin_char(char *s1, char c)
 	}
 	dst[i++] = c;
 	dst[i] = '\0';
+	free(s1);
 	return (dst);
 }

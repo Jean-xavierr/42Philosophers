@@ -6,13 +6,13 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:32:07 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/14 14:27:26 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/15 11:46:10 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philo.h"
 
-int			check_classic_mode_arg(int ac, char **av, int *prog_arg)
+int			check_classic_mode_arg(int ac, int *prog_arg)
 {
 	if (ac != 5 && ac != 6)
 	{
@@ -26,7 +26,7 @@ int			check_classic_mode_arg(int ac, char **av, int *prog_arg)
 	return (0);
 }
 
-int			check_visual_mode_arg(int ac, char **av, int *prog_arg)
+int			check_visual_mode_arg(int ac, int *prog_arg)
 {
 	if (ac != 6 && ac != 7)
 	{
@@ -43,8 +43,8 @@ int			check_visual_mode_arg(int ac, char **av, int *prog_arg)
 int			check_argument(int ac, char **av, int *prog_arg)
 {
 	if (!ft_strncmp(av[1], "-v"))
-		return (check_visual_mode_arg(ac, av, prog_arg));
+		return (check_visual_mode_arg(ac, prog_arg));
 	else
-		return (check_classic_mode_arg(ac, av, prog_arg));
+		return (check_classic_mode_arg(ac, prog_arg));
 	return (0);
 }

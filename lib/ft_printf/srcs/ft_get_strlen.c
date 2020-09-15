@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_strlen.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 15:32:27 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/11 16:21:03 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/15 12:13:00 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*ft_get_string_nb(t_data *data)
 {
 	char *s;
 
+	s = NULL;
 	if (data->convers == 'd' || data->convers == 'i')
 		s = ft_itoa((int)data->arg);
 	else if (data->convers == 'u')

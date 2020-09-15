@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 15:44:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/14 11:08:13 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/15 11:45:30 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ char		**uitoemoji(int nb)
 	char	**emojis;
 	char	**emoji_nb;
 
+	emojis = NULL;
 	emojis = malloc_emojistab(emojis);
 	if (!(emoji_nb = (char **)malloc(sizeof(char *) * ft_strlen_nb(nb))))
 		return (emojis);

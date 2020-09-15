@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:15:41 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/14 15:37:35 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/15 10:25:37 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int		parsing_time_to(int time_to, char *s)
 
 int		parsing_number_of_meals(int nb_meals)
 {
-	if (nb_meals < 0)
+	if (nb_meals <= 0)
 	{
 		ft_printf(COLOR_RED "Error : " COLOR_RESET);
 		ft_printf("number_of_time_each_philosophers_must_eat ");
@@ -67,7 +67,7 @@ int		managmenent_parsing(t_philo *data_philo)
 		return (1);
 	if (parsing_time_to(data_philo->t_sleep, "time_to_sleep"))
 		return (1);
-	if (data_philo->nb_meals != 0)
+	if (data_philo->meals == 1)
 		if (parsing_number_of_meals(data_philo->nb_meals))
 			return (1);
 	return (0);
