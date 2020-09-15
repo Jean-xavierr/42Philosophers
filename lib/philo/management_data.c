@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   management_philo.c                                 :+:      :+:    :+:   */
+/*   management_data.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:53:36 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/15 11:37:09 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/15 14:54:47 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philo.h"
 
-int		fill_struct(int ac, char **av, int prog_arg, t_philo *data_philo)
+int		fill_struct(int ac, char **av, int prog_arg, t_data_philo *data_philo)
 {
 	data_philo->n_philo = ft_atoi(av[1 + prog_arg], 0);
 	data_philo->t_die = ft_atoi(av[2 + prog_arg], 0);
@@ -32,7 +32,7 @@ int		fill_struct(int ac, char **av, int prog_arg, t_philo *data_philo)
 	return (0);
 }
 
-int		management_philo(int ac, char **av, t_philo *data_philo)
+int		management_data(int ac, char **av, t_data_philo *data_philo)
 {
 	int			prog_arg[0];
 

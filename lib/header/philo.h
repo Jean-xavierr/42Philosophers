@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:27:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/15 10:23:52 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/15 17:30:56 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <pthread.h>
+# include <sys/time.h>
 
 # define COLOR_RED     "\x1b[31m"
 # define COLOR_GREEN   "\x1b[32m"
@@ -27,7 +28,7 @@
 # define COLOR_CYAN    "\x1b[36m"
 # define COLOR_RESET   "\x1b[0m"
 
-typedef struct				s_philo
+typedef struct				s_data_philo
 {
 	unsigned int	n_philo;
 	unsigned int	t_die;
@@ -36,7 +37,16 @@ typedef struct				s_philo
 	unsigned int	meals;
 	unsigned int	nb_meals;
 	// unsigned int	last_meal;
+}							t_data_philo;
+
+typedef struct				s_philo
+{
+	pthread_t			thread;
+	pthread_mutex_t		fork1;
+	pthread_mutex_t		fork2;
+	struct timeval		time_start;
 }							t_philo;
+
 
 /*
 ** Function Global
@@ -66,8 +76,8 @@ void						print_error_more_arg(void);
 int							parsing_nb_philo(int nb);
 int							parsing_time_to(int time_to, char *s);
 int							parsing_number_of_meals(int nb_meals);
-int							management_philo(int ac, char **av,
-							t_philo *data_philo);
-int							managmenent_parsing(t_philo *data_philo);
+int							management_data(int ac, char **av,
+							t_data_philo *data_philo);
+int							managmenent_parsing(t_data_philo *data_philo);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:15:41 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/15 10:25:37 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/15 14:32:42 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		parsing_number_of_meals(int nb_meals)
 	return (0);
 }
 
-int		managmenent_parsing(t_philo *data_philo)
+int		managmenent_parsing(t_data_philo *data_philo)
 {
 	if (parsing_nb_philo(data_philo->n_philo))
 		return (1);
