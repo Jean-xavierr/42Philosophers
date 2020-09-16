@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:27:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/15 17:30:56 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/16 16:36:08 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,7 @@ typedef struct				s_data_philo
 	unsigned int	t_sleep;
 	unsigned int	meals;
 	unsigned int	nb_meals;
-	// unsigned int	last_meal;
 }							t_data_philo;
-
-typedef struct				s_philo
-{
-	pthread_t			thread;
-	pthread_mutex_t		fork1;
-	pthread_mutex_t		fork2;
-	struct timeval		time_start;
-}							t_philo;
-
 
 /*
 ** Function Global
