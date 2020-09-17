@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:53:36 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/17 16:15:40 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/17 17:45:32 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		fill_struct(int ac, char **av, int prog_arg, t_data_philo *data_philo)
 	}
 	if(prog_arg == 1)
 		data_philo->option = 1;
+	printf("n_philo [%d]\nt_die [%d]\nt_eat [%d]\nt_sleep [%d]\n", data_philo->n_philo, data_philo->t_die, data_philo->t_eat, data_philo->t_sleep);
 	return (0);
 }
 

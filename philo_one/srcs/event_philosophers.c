@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 11:10:59 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/17 17:15:56 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/17 17:26:26 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ void	put_down_fork(t_philo *philo)
 
 void	philo_eat(t_philo *philo)
 {
+	struct timeval	last_meal;
+
+	gettimeofday(&last_meal, NULL);
 	pthread_mutex_lock(philo->display);
+	philo->last_meal = last_meal.tv_usec;
 	display_light(current_time(philo), philo->id, EVENT_EAT);
 	pthread_mutex_unlock(philo->display);
 	usleep(philo->data_philo->t_eat);

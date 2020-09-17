@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 11:02:28 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/17 17:19:37 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/17 17:43:47 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void		init_philo(t_data_philo *data_philo, t_philo *philo)
 		init_mutex_display(philo, data_philo->n_philo);
 		philo[i].data_philo = data_philo;
 		philo[i].id = i;
+		philo[i].is_dead = 0;
+		philo[i].last_meal = 0;
 		i++;
 	}
 }

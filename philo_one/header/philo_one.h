@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 12:08:00 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/17 17:21:39 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/17 17:37:59 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct				s_philo
 	unsigned int		id;
 	unsigned int		last_meal;
 	unsigned int		time_action;
+	unsigned int		is_dead;
 	t_data_philo		*data_philo;
 }							t_philo;
 
@@ -42,5 +43,6 @@ void						philo_sleep(t_philo *philo);
 void						philo_think(t_philo *philo);
 
 int							current_time(t_philo *philo);
+void						philo_is_dead(t_philo *philo);
 
 #endif

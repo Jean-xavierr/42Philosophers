@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 11:59:22 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/17 17:21:15 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/17 17:59:16 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		*thread_philo(void *data)
 
 	i = 0;
 	philo = (t_philo *)data;
-	while (i < 2)
+	while (i < 2 && philo->is_dead == 0)
 	{
 		take_fork(philo);
 		philo_eat(philo);
@@ -28,7 +28,7 @@ void		*thread_philo(void *data)
 		philo_think(philo);
 		i++;
 	}
-	return ;
+	return (NULL);
 }
 
 void		launch_philo(t_data_philo *data_philo)
