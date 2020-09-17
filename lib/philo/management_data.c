@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:53:36 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/15 14:54:47 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/17 16:12:05 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ int		fill_struct(int ac, char **av, int prog_arg, t_data_philo *data_philo)
 		data_philo->meals = 0;
 		data_philo->nb_meals = 0;
 	}
-	ft_printf("\nn_philo %d\nt_die %d\nt_eat %d\nt_sleep %d\nnb_meals %d\n", data_philo->n_philo, data_philo->t_die, data_philo->t_eat, data_philo->t_sleep, data_philo->nb_meals);
+	if(prog_arg == 1)
+		data_philo->option = 1;
+	// ft_printf("\nn_philo %d\nt_die %d\nt_eat %d\nt_sleep %d\nnb_meals %d\n", data_philo->n_philo, data_philo->t_die, data_philo->t_eat, data_philo->t_sleep, data_philo->nb_meals);
 	return (0);
 }
 
@@ -37,9 +39,9 @@ int		management_data(int ac, char **av, t_data_philo *data_philo)
 	int			prog_arg[0];
 
 	*prog_arg = 0;
+	data_philo->option = 0;
 	if (!check_argument(ac, av, prog_arg))
 	{
-		ft_printf("parsing ok\n");
 		fill_struct(ac, av, *prog_arg, data_philo);
 		if (managmenent_parsing(data_philo))
 			return (1);

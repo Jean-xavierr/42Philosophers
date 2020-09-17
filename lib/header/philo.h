@@ -6,27 +6,34 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:27:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/16 16:36:08 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/17 16:11:45 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
 
-# include "../ft_printf/includes/ft_printf.h"
+// # include "../ft_printf/includes/ft_printf.h"
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
 # include <pthread.h>
 # include <sys/time.h>
+# include <stdio.h>
 
-# define COLOR_RED     "\x1b[31m"
-# define COLOR_GREEN   "\x1b[32m"
-# define COLOR_YELLOW  "\x1b[33m"
-# define COLOR_BLUE    "\x1b[34m"
-# define COLOR_MAGENTA "\x1b[35m"
-# define COLOR_CYAN    "\x1b[36m"
-# define COLOR_RESET   "\x1b[0m"
+# define COLOR_RED		"\x1b[31m"
+# define COLOR_GREEN	"\x1b[32m"
+# define COLOR_YELLOW	"\x1b[33m"
+# define COLOR_BLUE		"\x1b[34m"
+# define COLOR_MAGENTA	"\x1b[35m"
+# define COLOR_CYAN		"\x1b[36m"
+# define COLOR_RESET	"\x1b[0m"
+
+# define EVENT_FORK		"has taken a fork"
+# define EVENT_EAT		"is eating"
+# define EVENT_SLEEP	"is sleeping"
+# define EVENT_THINK	"is thinking"
+# define EVENT_DIE		"is died"
 
 typedef struct				s_data_philo
 {
@@ -36,6 +43,8 @@ typedef struct				s_data_philo
 	unsigned int	t_sleep;
 	unsigned int	meals;
 	unsigned int	nb_meals;
+	unsigned int	option;
+	unsigned int	time_start;
 }							t_data_philo;
 
 /*
@@ -69,5 +78,7 @@ int							parsing_number_of_meals(int nb_meals);
 int							management_data(int ac, char **av,
 							t_data_philo *data_philo);
 int							managmenent_parsing(t_data_philo *data_philo);
+void						display_time(int time);
+void						display_light(int time, int id_philo, char *event);
 
 #endif
