@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_philo.c                                       :+:      :+:    :+:   */
+/*   init_philosophers.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 11:02:28 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/17 15:36:51 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/17 17:19:37 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo_one.h"
+#include "../header/philo_one.h"
 
 void		init_mutex_fork(t_philo *philo, int n_philo)
 {
@@ -19,7 +19,8 @@ void		init_mutex_fork(t_philo *philo, int n_philo)
 	i = 0;
 	while (i < n_philo)
 	{
-		if (!(philo[i].fork1= (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t))))
+		philo[i].fork1 = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t));
+		if (philo[i].fork1 == NULL)
 			return ;
 		pthread_mutex_init(philo[i].fork1, NULL);
 		i++;
@@ -37,7 +38,7 @@ void		init_mutex_fork(t_philo *philo, int n_philo)
 
 void		init_mutex_display(t_philo *philo, int n_philo)
 {
-	int 				i;
+	int					i;
 	pthread_mutex_t		*display;
 
 	i = 0;

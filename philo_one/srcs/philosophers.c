@@ -1,44 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   philosophers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 11:59:22 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/17 15:37:57 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/17 17:21:15 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo_one.h"
+#include "../header/philo_one.h"
 
 void		*thread_philo(void *data)
 {
-	int i;
+	int			i;
 	t_philo		*philo;
 
 	i = 0;
 	philo = (t_philo *)data;
 	while (i < 2)
 	{
+		take_fork(philo);
 		philo_eat(philo);
+		put_down_fork(philo);
+		philo_sleep(philo);
+		philo_think(philo);
 		i++;
 	}
-	return NULL;
+	return ;
 }
 
 void		launch_philo(t_data_philo *data_philo)
 {
-	t_philo 		*philo;
+	t_philo			*philo;
 	struct timeval	time_start;
 	unsigned int	i;
 
 	if (!(philo = (t_philo*)malloc(sizeof(t_philo) * data_philo->n_philo)))
-		return ;	
+		return ;
 	i = 0;
 	init_philo(data_philo, philo);
 	gettimeofday(&time_start, NULL);
-	data_philo[0].time_start = time_start.tv_usec;
+	data_philo->time_start = time_start.tv_usec;
 	while (i < data_philo->n_philo)
 	{
 		pthread_create(&philo[i].thread, NULL, &thread_philo, &philo[i]);
