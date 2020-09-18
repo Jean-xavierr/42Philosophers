@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   philosophers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/11 16:19:03 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/14 11:06:54 by jereligi         ###   ########.fr       */
+/*   Created: 2020/09/11 11:59:22 by Jeanxavier        #+#    #+#             */
+/*   Updated: 2020/09/18 15:38:14 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *s)
-{
-	int	i;
+#include "../header/philo_one.h"
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+int			main(int ac, char **av)
+{
+	t_data		*data;
+
+	if (!(data = (t_data*)malloc(sizeof(t_data))))
+		return (0);
+	if (data_manager(ac, av, data))
+		return (1);
+	return (0);
 }

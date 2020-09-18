@@ -3,23 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:27:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/17 16:33:43 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/18 16:04:08 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
 
-// # include "../ft_printf/includes/ft_printf.h"
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
 # include <pthread.h>
 # include <sys/time.h>
-# include <stdio.h>
 
 # define COLOR_RED		"\x1b[31m"
 # define COLOR_GREEN	"\x1b[32m"
@@ -35,50 +33,43 @@
 # define EVENT_THINK	"is thinking"
 # define EVENT_DIE		"is died"
 
-typedef struct				s_data_philo
+# define TRUE				1
+# define FALSE				0
+
+typedef char				t_bool;
+typedef	pthread_t			t_thread;
+typedef	pthread_mutex_t		t_mutex;	
+
+typedef struct				s_data
 {
 	unsigned int	n_philo;
 	unsigned int	t_die;
 	unsigned int	t_eat;
 	unsigned int	t_sleep;
-	unsigned int	meals;
 	unsigned int	nb_meals;
-	unsigned int	option;
 	unsigned int	time_start;
-}							t_data_philo;
-
-/*
-** Function Global
-*/
-
-int							ft_strlen(char *s);
-char						*ft_strdup(char *s1);
-char						*ft_strjoin(char *s1, char *s2);
-char						**uitoemoji(int nb);
-char						*ft_strjoindel(char *s1, char *s2, int param);
-void						*ft_memcpy_n(void *dst, void *src, unsigned int n);
-int							ft_strncmp(char *s1, char *s2);
-int							ft_atoi(char *str, int *i);
+	t_bool			meals;
+	t_bool			option;
+	t_bool			one_die;
+}							t_data;
 
 /*
 ** Function for all Philo
 */
-
-int							check_argument(int ac, char **av, int *prog_arg);
-void						print_clasic_display(char *time, int id_philo,
-							int event);
-void						print_event(char *time, char **id_philo, int event);
 void						print_usage(void);
-void						start_display(void);
-void						print_error_not_enought_arg(int nb);
 void						print_error_more_arg(void);
-int							parsing_nb_philo(int nb);
-int							parsing_time_to(int time_to, char *s);
-int							parsing_number_of_meals(int nb_meals);
-int							management_data(int ac, char **av,
-							t_data_philo *data_philo);
-int							managmenent_parsing(t_data_philo *data_philo);
-void						display_time(int time);
-void						display_light(int time, int id_philo, char *event);
+int							parsing_manager(t_data *data);
+void						print_error_not_enought_arg(int nb);
+int							data_manager(int ac, char **av, t_data *data);
+int							check_argument(int ac, char **av, int *prog_arg);
+
+/*
+** Utils
+*/
+void						ft_putstr(char *s);
+int							ft_strlen(char *s);
+char						*ft_utoa(unsigned int n);
+int							ft_atoi(char *str, int *i);
+int							ft_strncmp(char *s1, char *s2);
 
 #endif

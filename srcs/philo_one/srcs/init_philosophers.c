@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_philosophers.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 11:02:28 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/17 17:43:47 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/18 15:38:14 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,16 @@ void		init_mutex_display(t_philo *philo, int n_philo)
 	}
 }
 
-void		init_philo(t_data_philo *data_philo, t_philo *philo)
+void		init_philo(t_data *data, t_philo *philo)
 {
 	int i;
 
 	i = 0;
-	while (i < data_philo->n_philo)
+	while (i < data->n_philo)
 	{
-		init_mutex_fork(philo, data_philo->n_philo);
-		init_mutex_display(philo, data_philo->n_philo);
-		philo[i].data_philo = data_philo;
+		init_mutex_fork(philo, data->n_philo);
+		init_mutex_display(philo, data->n_philo);
+		philo[i].data = data;
 		philo[i].id = i;
 		philo[i].is_dead = 0;
 		philo[i].last_meal = 0;
