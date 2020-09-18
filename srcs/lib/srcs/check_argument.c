@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_argument.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:32:07 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/15 11:46:10 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/18 16:28:46 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
