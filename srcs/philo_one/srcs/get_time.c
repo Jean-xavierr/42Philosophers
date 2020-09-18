@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   get_time.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/18 15:31:01 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/18 15:31:54 by Jeanxavier       ###   ########.fr       */
+/*   Created: 2020/09/18 18:13:31 by Jeanxavier        #+#    #+#             */
+/*   Updated: 2020/09/18 18:27:49 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/philo.h"
+#include "../header/philo_one.h"
 
-int		ft_strlen(char *s)
+unsigned int	get_time(unsigned int time_start)
 {
-	int i;
+	struct timeval	current_time;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	gettimeofday(&current_time, NULL);
+	return (current_time.tv_usec - time_start);
+}
+
+unsigned int	get_time_start(void)
+{
+	struct timeval	current_time;
+
+	gettimeofday(&current_time, NULL);
+	return (current_time.tv_usec);	
 }

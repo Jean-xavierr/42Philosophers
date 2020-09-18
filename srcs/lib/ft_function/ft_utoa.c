@@ -6,28 +6,11 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 15:29:15 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/18 15:33:21 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/18 18:36:23 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philo.h"
-
-static char		*ft_strdup(char *s1)
-{
-	int		i;
-	char	*dest;
-
-	i = 0;
-	if (!(dest = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1)))
-		return (NULL);
-	while (s1[i])
-	{
-		dest[i] = s1[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
 
 static int		ulen(unsigned int n)
 {

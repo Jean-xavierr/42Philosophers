@@ -6,18 +6,20 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:27:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/18 16:04:08 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/18 18:52:22 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
 
+# include "../ft_printf/includes/ft_printf.h"
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
 # include <pthread.h>
 # include <sys/time.h>
+# include <stdio.h>
 
 # define COLOR_RED		"\x1b[31m"
 # define COLOR_GREEN	"\x1b[32m"
@@ -64,12 +66,14 @@ int							data_manager(int ac, char **av, t_data *data);
 int							check_argument(int ac, char **av, int *prog_arg);
 
 /*
-** Utils
+** ft_function
 */
-void						ft_putstr(char *s);
 int							ft_strlen(char *s);
+char						*ft_strdup(char *s1);
 char						*ft_utoa(unsigned int n);
 int							ft_atoi(char *str, int *i);
 int							ft_strncmp(char *s1, char *s2);
+char						*ft_strjoindel(char *s1, char *s2, int param);
+void						*ft_memcpy_n(void *dst, void *src, unsigned int n);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 12:08:00 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/18 17:57:02 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/18 18:13:07 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ typedef struct				s_philo
 
 typedef	struct				s_stock
 {
-	t_data			data;
-	t_philo			philo;
+	struct s_data	*data;
+	struct s_philo	*philo;
 }							t_stock;
 
 /*

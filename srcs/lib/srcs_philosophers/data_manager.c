@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:53:36 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/18 16:04:18 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/18 18:58:41 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,6 @@ int		fill_struct(int ac, char **av, int prog_arg, t_data *data)
 	}
 	if(prog_arg == 1)
 		data->option = TRUE;
-	// ft_putstr(ft_utoa(data->n_philo));
-	// ft_putstr("\n");
-	// ft_putstr(ft_utoa(data->t_die));
-	// ft_putstr("\n");
-	// ft_putstr(ft_utoa(data->t_eat));
-	// ft_putstr("\n");
-	// ft_putstr(ft_utoa(data->t_sleep));
-	// ft_putstr("\n");
-	// ft_putstr(ft_utoa(data->meals));
-	// ft_putstr("\n");
-	// ft_putstr(ft_utoa(data->nb_meals));
-	// ft_putstr("\n");
-	// ft_putstr(ft_utoa(data->option));
-	// ft_putstr("\n");
 	return (0);
 }
 
