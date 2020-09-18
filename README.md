@@ -23,6 +23,11 @@ __Project duration__ : in work ⏳
 
 > ⚠️ **Warning**: Don't copy/paste code you don't understand: it's bad for you, and for the school. I have put my login in a lot of files to encourage you doing your own version. Have fun !
 
+`Philo_one Thread and Mutex `
+([good resolution diagram](https://www.zupimages.net/up/20/38/cp71.png))
+
+![alt text](https://zupimages.net/up/20/38/is7q.png)
+
  __*In build*__   
 
 *I'm working on this project, I update this readme every day, you can check the to do list*
