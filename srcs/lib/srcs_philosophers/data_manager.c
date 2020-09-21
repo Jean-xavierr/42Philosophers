@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data_manager.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:53:36 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/18 18:58:41 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/21 17:17:20 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		fill_struct(int ac, char **av, int prog_arg, t_data *data)
 		data->meals = 0;
 		data->nb_meals = 0;
 	}
-	if(prog_arg == 1)
+	if (prog_arg == 1)
 		data->option = TRUE;
 	return (0);
 }

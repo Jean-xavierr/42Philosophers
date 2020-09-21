@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:27:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/18 18:52:22 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/21 17:16:40 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@
 
 typedef char				t_bool;
 typedef	pthread_t			t_thread;
-typedef	pthread_mutex_t		t_mutex;	
+typedef	pthread_mutex_t		t_mutex;
 
 typedef struct				s_data
 {
@@ -49,11 +49,18 @@ typedef struct				s_data
 	unsigned int	t_eat;
 	unsigned int	t_sleep;
 	unsigned int	nb_meals;
-	unsigned int	time_start;
+	unsigned int	t_start_usec;
+	unsigned int	t_start_sec;
 	t_bool			meals;
 	t_bool			option;
 	t_bool			one_die;
 }							t_data;
+
+typedef	struct				s_stock
+{
+	struct s_data	*data;
+	struct s_philo	*philo;
+}							t_stock;
 
 /*
 ** Function for all Philo
@@ -64,6 +71,9 @@ int							parsing_manager(t_data *data);
 void						print_error_not_enought_arg(int nb);
 int							data_manager(int ac, char **av, t_data *data);
 int							check_argument(int ac, char **av, int *prog_arg);
+unsigned int				get_time_start(int time);
+unsigned int				get_time(unsigned int time_start,
+							unsigned int start_sec);
 
 /*
 ** ft_function

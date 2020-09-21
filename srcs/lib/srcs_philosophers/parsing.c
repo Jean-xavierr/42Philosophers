@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:15:41 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/18 18:58:48 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/21 17:17:28 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int		parsing_time_to(int time_to, char *s)
 	else if (time_to > 0 && time_to < 60)
 	{
 		ft_printf(COLOR_YELLOW "Warning : " COLOR_RESET);
-		ft_printf("%s less 60ms delay could be not enough for good result.\n", s);
+		ft_printf("%s less 60ms delay could be not enough for good result.\n",
+		s);
 	}
 	return (0);
 }
