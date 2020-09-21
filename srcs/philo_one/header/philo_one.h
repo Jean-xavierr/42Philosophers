@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 12:08:00 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/21 16:13:11 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/21 17:39:19 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ void						philo_sleep(t_stock *stock, t_philo *philo);
 void						philo_think(t_stock *stock, t_philo *philo);
 void						display_manager(t_stock *stock, t_philo *philo,
 							char *event);
+void						*reaper(void *stock);
 
 #endif

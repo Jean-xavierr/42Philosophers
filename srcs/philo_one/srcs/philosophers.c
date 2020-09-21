@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 11:59:22 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/21 17:15:34 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/21 17:59:56 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,35 @@ void		*life_philosophers(void *stock)
 	t_stock			*s;
 	t_data			*data;
 	t_philo			*philo;
+	t_thread		death;
 
 	i = 0;
 	s = (t_stock *)stock;
 	data = s->data;
 	philo = s->philo;
-	while (!data->meals || i < data->nb_meals)
+	while (!data->one_die && (!data->meals || i < data->nb_meals))
 	{
+		pthread_detach(death);
+		pthread_create(&death, NULL, &reaper, stock);
+		if (data->one_die)
+			return (NULL);
 		philo_take_fork(s, philo);
+		if (data->one_die)
+			return (NULL);
 		philo_eat(s, philo);
+		if (data->one_die)
+			return (NULL);
 		philo_sleep(s, philo);
+		if (data->one_die)
+			return (NULL);
 		philo_think(s, philo);
+		if (data->one_die)
+		{
+			pthread_mutex_lock(philo->m_display);
+			ft_printf("id [%d] Dead [%d]\n", philo->id, data->one_die);
+			pthread_mutex_unlock(philo->m_display);
+			return (NULL);
+		}
 		i++;
 	}
 	return (NULL);

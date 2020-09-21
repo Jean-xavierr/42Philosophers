@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:27:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/21 17:16:40 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/21 17:35:27 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,10 @@
 # define EVENT_THINK	"is thinking"
 # define EVENT_DIE		"is died"
 
-# define TRUE				1
-# define FALSE				0
+# define ONE_MILLISEC 	1000
+
+# define TRUE			1
+# define FALSE			0
 
 typedef char				t_bool;
 typedef	pthread_t			t_thread;
@@ -72,7 +74,7 @@ void						print_error_not_enought_arg(int nb);
 int							data_manager(int ac, char **av, t_data *data);
 int							check_argument(int ac, char **av, int *prog_arg);
 unsigned int				get_time_start(int time);
-unsigned int				get_time(unsigned int time_start,
+unsigned int				get_time(unsigned int start_usec,
 							unsigned int start_sec);
 
 /*
