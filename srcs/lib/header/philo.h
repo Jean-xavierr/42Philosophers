@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:27:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/21 17:35:27 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/22 16:13:38 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct				s_data
 	unsigned int	t_eat;
 	unsigned int	t_sleep;
 	unsigned int	nb_meals;
+	unsigned int	meals_finish;
 	unsigned int	t_start_usec;
 	unsigned int	t_start_sec;
 	t_bool			meals;
@@ -76,6 +77,7 @@ int							check_argument(int ac, char **av, int *prog_arg);
 unsigned int				get_time_start(int time);
 unsigned int				get_time(unsigned int start_usec,
 							unsigned int start_sec);
+char						**uitoemoji(unsigned int nb);
 
 /*
 ** ft_function
@@ -83,8 +85,9 @@ unsigned int				get_time(unsigned int start_usec,
 int							ft_strlen(char *s);
 char						*ft_strdup(char *s1);
 char						*ft_utoa(unsigned int n);
+char						*ft_strtabtostr(char **s);
 int							ft_atoi(char *str, int *i);
-int							ft_strncmp(char *s1, char *s2);
+int							ft_strcmp(char *s1, char *s2);
 char						*ft_strjoindel(char *s1, char *s2, int param);
 void						*ft_memcpy_n(void *dst, void *src, unsigned int n);
 

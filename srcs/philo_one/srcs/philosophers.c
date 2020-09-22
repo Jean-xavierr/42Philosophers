@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 11:59:22 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/21 17:59:56 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/22 16:58:39 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,15 @@ void		*life_philosophers(void *stock)
 	{
 		pthread_detach(death);
 		pthread_create(&death, NULL, &reaper, stock);
-		if (data->one_die)
-			return (NULL);
 		philo_take_fork(s, philo);
-		if (data->one_die)
-			return (NULL);
 		philo_eat(s, philo);
-		if (data->one_die)
-			return (NULL);
 		philo_sleep(s, philo);
-		if (data->one_die)
-			return (NULL);
 		philo_think(s, philo);
-		if (data->one_die)
-		{
-			pthread_mutex_lock(philo->m_display);
-			ft_printf("id [%d] Dead [%d]\n", philo->id, data->one_die);
-			pthread_mutex_unlock(philo->m_display);
-			return (NULL);
-		}
 		i++;
 	}
+	pthread_detach(death);
+	if (data->meals && i == data->nb_meals)
+		data->meals_finish++;
 	return (NULL);
 }
 
@@ -65,6 +53,8 @@ int			launch_philosophers(t_data *data, t_philo *philo)
 	data->t_start_usec = get_time_start(MICROSEC);
 	data->t_start_sec = get_time_start(MILLESEC);
 	i = 0;
+	if (data->option == TRUE)
+		display_visual();
 	while (i < data->n_philo)
 	{
 		stock->philo = &philo[i];
@@ -73,10 +63,20 @@ int			launch_philosophers(t_data *data, t_philo *philo)
 		usleep(35);
 		i++;
 	}
+	return (0);
+}
+
+void		free_philosophers(t_data *data, t_philo *philo)
+{
+	unsigned int i;
+
 	i = 0;
 	while (i < data->n_philo)
-		pthread_join(philo[i++].thread, NULL);
-	return (0);
+	{
+		free(philo[i++].m_fork1);
+	}
+	free(philo);
+	free(data);
 }
 
 int			main(int ac, char **av)
@@ -92,5 +92,9 @@ int			main(int ac, char **av)
 		return (0);
 	init_philosopher(data->n_philo, philo);
 	launch_philosophers(data, philo);
+	monitor(data, philo);
+	free_philosophers(data, philo);
+	while (1)
+		;
 	return (0);
 }

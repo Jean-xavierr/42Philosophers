@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 11:53:36 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/21 17:17:20 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/22 14:45:55 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int		fill_struct(int ac, char **av, int prog_arg, t_data *data)
 	data->t_die = ft_atoi(av[2 + prog_arg], 0);
 	data->t_eat = ft_atoi(av[3 + prog_arg], 0);
 	data->t_sleep = ft_atoi(av[4 + prog_arg], 0);
+	data->meals_finish = 0;
 	if (ac == (6 + prog_arg))
 	{
 		data->meals = 1;

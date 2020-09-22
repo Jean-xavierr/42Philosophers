@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 12:08:00 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/21 17:39:19 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/22 16:19:26 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,18 @@ void						philo_think(t_stock *stock, t_philo *philo);
 void						display_manager(t_stock *stock, t_philo *philo,
 							char *event);
 void						*reaper(void *stock);
+void						display_emoji(unsigned int time, t_philo *philo,
+							char *event);
+void						display_visual(void);
+void						display_time(t_bool option, unsigned int time);
+void						print_id_philo(t_philo *philo);
+int							len_nb(unsigned int nb);
+void						monitor(t_data *data, t_philo *philo);
+
+void						display_visual_die(t_data *data, t_philo *philo,
+							unsigned int time);
+void						display_light_die(t_data *data, t_philo *philo,
+							unsigned int time);
+void						display_all_meals_ate(t_data *data);
 
 #endif

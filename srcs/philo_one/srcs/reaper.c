@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 17:29:33 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/21 18:01:41 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/22 16:17:18 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ void		*reaper(void *stock)
 	{
 		data->one_die = TRUE;
 		pthread_mutex_lock(philo->m_display);
-		ft_printf("%d %d is dead\n", current_time, philo->id);
-		pthread_mutex_unlock(philo->m_display);
+		if (!data->option)
+			display_light_die(data, philo, current_time);
+		else
+			display_visual_die(data, philo, current_time);
 	}
 	return (NULL);
 }

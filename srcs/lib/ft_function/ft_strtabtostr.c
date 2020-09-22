@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strtabtostr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/14 10:14:08 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/22 11:30:53 by jereligi         ###   ########.fr       */
+/*   Created: 2020/09/22 16:14:00 by jereligi          #+#    #+#             */
+/*   Updated: 2020/09/22 16:14:13 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
-{
-	int			i;
-	char		*src1;
-	char		*src2;
+#include "../header/philo.h"
 
-	src1 = s1;
-	src2 = s2;
+char		*ft_strtabtostr(char **s)
+{
+	int		i;
+	int		n;
+	int		len;
+	char	*str;
+
+	len = 0;
+	while (s[len])
+		len++;
+	len = len * 7;
+	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
 	i = 0;
-	if (!s1)
-		return (-1);
-	while (src1[i] && src2[i] && src1[i] == src2[i])
+	len = 0;
+	while (s[i] != NULL)
+	{
+		n = 0;
+		while (s[i][n])
+			str[len++] = s[i][n++];
 		i++;
-	return (src1[i] - src2[i]);
+	}
+	str[len++] = '\0';
+	return (str);
 }

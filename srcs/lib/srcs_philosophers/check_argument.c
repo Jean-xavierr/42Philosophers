@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_argument.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:32:07 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/18 18:58:59 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/22 11:31:05 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int			check_visual_mode_arg(int ac, int *prog_arg)
 
 int			check_argument(int ac, char **av, int *prog_arg)
 {
-	if (!ft_strncmp(av[1], "-v"))
+	if (!ft_strcmp(av[1], "-v"))
 		return (check_visual_mode_arg(ac, prog_arg));
 	else
 		return (check_classic_mode_arg(ac, prog_arg));

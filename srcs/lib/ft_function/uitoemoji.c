@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 15:44:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/15 11:45:30 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/22 12:54:34 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 #define EMOJI_EIGHT "8️⃣"
 #define EMOJI_NINE	"9️⃣"
 
-int			ft_strlen_nb(int nb)
+int			len_emoji(int nb)
 {
 	int i;
 
@@ -63,7 +63,7 @@ int			get_emoji_nb(int nb, char **emoji_nb, char **emojis)
 	while (nb > 0)
 	{
 		emoji_nb[i] = ft_strdup("");
-		if (nb > 10)
+		if (nb > 9)
 		{
 			tmp_nb = nb % 10;
 			emoji_nb[i] = ft_strjoindel(ft_strjoindel(emoji_nb[i],
@@ -99,7 +99,7 @@ char		**ft_strtab_swap(char **emoji_nb, int i)
 	return (emoji_nb);
 }
 
-char		**uitoemoji(int nb)
+char		**uitoemoji(unsigned int nb)
 {
 	int		i;
 	char	**emojis;
@@ -107,7 +107,7 @@ char		**uitoemoji(int nb)
 
 	emojis = NULL;
 	emojis = malloc_emojistab(emojis);
-	if (!(emoji_nb = (char **)malloc(sizeof(char *) * ft_strlen_nb(nb))))
+	if (!(emoji_nb = (char **)malloc(sizeof(char *) * len_emoji(nb))))
 		return (emojis);
 	i = get_emoji_nb(nb, emoji_nb, emojis);
 	ft_strtab_swap(emoji_nb, i);
