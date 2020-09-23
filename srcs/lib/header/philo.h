@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:27:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/22 16:13:38 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/23 10:39:41 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@
 # define FALSE			0
 
 typedef char				t_bool;
-typedef	pthread_t			t_thread;
-typedef	pthread_mutex_t		t_mutex;
 
 typedef struct				s_data
 {

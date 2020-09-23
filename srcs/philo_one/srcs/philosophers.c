@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 11:59:22 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/22 16:58:39 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/23 10:58:17 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void		*life_philosophers(void *stock)
 	t_stock			*s;
 	t_data			*data;
 	t_philo			*philo;
-	t_thread		death;
+	pthread_t		death;
 
 	i = 0;
 	s = (t_stock *)stock;
@@ -71,6 +71,8 @@ void		free_philosophers(t_data *data, t_philo *philo)
 	unsigned int i;
 
 	i = 0;
+	printf("Ok\n");
+	free(philo->m_display);
 	while (i < data->n_philo)
 	{
 		free(philo[i++].m_fork1);

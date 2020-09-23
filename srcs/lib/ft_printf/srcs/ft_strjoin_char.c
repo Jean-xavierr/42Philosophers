@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin_char.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 16:32:41 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/15 11:36:06 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/22 21:31:05 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strjoin_char(char *s1, char c)
 	int		i;
 	char	*dst;
 
-	dst = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 2));
+	dst = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 3));
 	if (dst == NULL)
 		return (NULL);
 	i = 0;
@@ -27,6 +27,7 @@ char	*ft_strjoin_char(char *s1, char c)
 		i++;
 	}
 	dst[i++] = c;
+	dst[i++] = '\0';
 	dst[i] = '\0';
 	free(s1);
 	return (dst);

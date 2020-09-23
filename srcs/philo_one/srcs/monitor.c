@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   monitor.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 13:00:09 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/22 16:18:24 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/23 10:57:58 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,13 @@ void		kill_philosophers(t_data *data, t_philo *philo)
 	unsigned int	i;
 
 	i = 0;
+	printf("COUCOU\n");
 	while (i < data->n_philo)
-		pthread_detach(philo[i++].thread);
+	{
+		printf("\ntest\n");
+		pthread_detach(philo[i].thread);
+		i++;
+	}
 }
 
 void		monitor_die(t_data *data, t_philo *philo)

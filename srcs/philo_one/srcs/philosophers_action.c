@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers_action.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:28:05 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/22 16:01:49 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/23 10:21:57 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ void		philo_think(t_stock *stock, t_philo *philo)
 	pthread_mutex_lock(stock->philo->m_display);
 	display_manager(stock, philo, EVENT_THINK);
 	pthread_mutex_unlock(stock->philo->m_display);
+	usleep(10);
 }

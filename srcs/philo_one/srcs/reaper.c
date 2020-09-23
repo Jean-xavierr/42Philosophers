@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reaper.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 17:29:33 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/22 16:17:18 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/23 10:55:30 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void		*reaper(void *stock)
 	current_time = get_time(data->t_start_usec, data->t_start_sec);
 	if (current_time - philo->last_meal > data->t_die)
 	{
-		data->one_die = TRUE;
 		pthread_mutex_lock(philo->m_display);
+		data->one_die = TRUE;
 		if (!data->option)
 			display_light_die(data, philo, current_time);
 		else
