@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:27:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/23 10:39:41 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/23 15:08:52 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ char						**uitoemoji(unsigned int nb);
 */
 int							ft_strlen(char *s);
 char						*ft_strdup(char *s1);
+int							len_nb(unsigned int nb);
 char						*ft_utoa(unsigned int n);
 char						*ft_strtabtostr(char **s);
 int							ft_atoi(char *str, int *i);

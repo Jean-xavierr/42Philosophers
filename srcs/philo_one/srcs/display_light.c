@@ -6,24 +6,11 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:32:28 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/23 13:04:13 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/23 16:03:34 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philo_one.h"
-
-int			len_nb(unsigned int nb)
-{
-	int		i;
-
-	i = 1;
-	while (nb > 9)
-	{
-		nb = nb / 10;
-		i++;
-	}
-	return (i);
-}
 
 void		display_light_die(t_data *data, t_philo *philo, unsigned int time)
 {
@@ -52,14 +39,37 @@ void		display_time(t_bool option, unsigned int time)
 	}
 }
 
+void		display_light(unsigned int idp, unsigned int current_time,
+char *event)
+{
+	char			*time;
+	char			*id;
+	char			*dot;
+
+	dot = ".......";
+	time = ft_utoa(current_time);
+	id = ft_utoa(idp);
+	write(1, dot, ft_strlen(dot) - len_nb(current_time));
+	write(1, time, ft_strlen(time));
+	write(1, " ", 1);
+	write(1, id, 1);
+	write(1, " ", 1);
+	write(1, event, ft_strlen(event));
+	write(1, "\n", 1);
+	free(time);
+	free(id);
+}
+
 void		display_manager(t_stock *s, t_philo *philo, char *event)
 {
-	unsigned int current_time;
+	unsigned int	current_time;
 
 	current_time = get_time(s->data->t_start_usec, s->data->t_start_sec);
-	display_time(s->data->option, current_time);
 	if (s->data->option == FALSE)
-		ft_printf("%u %u %s\n", current_time, philo->id, event);
+		display_light(philo->id, current_time, event);
 	else
+	{
+		display_time(s->data->option, current_time);
 		display_emoji(current_time, philo, event);
+	}
 }

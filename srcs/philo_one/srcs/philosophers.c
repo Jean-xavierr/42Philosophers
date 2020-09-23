@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 11:59:22 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/23 13:01:11 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/23 16:14:53 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int			launch_philosophers(t_data *data, t_philo *philo)
 		stock->philo = &philo[i];
 		if (pthread_create(&philo[i].thread, NULL, &life_philosophers, stock))
 			return (1);
-		usleep(35);
+		usleep(30);
 		i++;
 	}
 	return (0);

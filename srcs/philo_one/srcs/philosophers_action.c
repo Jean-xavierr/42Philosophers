@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:28:05 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/23 12:10:30 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/23 15:22:35 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void		philo_take_fork(t_stock *stock, t_philo *philo)
 void		philo_eat(t_stock *s, t_philo *philo)
 {
 	pthread_mutex_lock(s->philo->m_display);
-	philo->last_meal = get_time(s->data->t_start_usec, s->data->t_start_sec);
 	display_manager(s, philo, EVENT_EAT);
+	philo->last_meal = get_time(s->data->t_start_usec, s->data->t_start_sec);
 	pthread_mutex_unlock(s->philo->m_display);
 	usleep(s->data->t_eat * ONE_MILLISEC);
 	pthread_mutex_unlock(philo->m_fork1);
