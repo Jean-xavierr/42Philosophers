@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 11:59:22 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/23 10:58:17 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/23 12:57:08 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ int			launch_philosophers(t_data *data, t_philo *philo)
 
 	if (!(stock = (t_stock *)malloc(sizeof(t_stock))))
 		return (0);
-	if (!(stock->philo = (t_philo *)malloc(sizeof(t_philo) * data->n_philo)))
-		return (0);
 	stock->data = data;
 	data->t_start_usec = get_time_start(MICROSEC);
 	data->t_start_sec = get_time_start(MILLESEC);
@@ -71,12 +69,9 @@ void		free_philosophers(t_data *data, t_philo *philo)
 	unsigned int i;
 
 	i = 0;
-	printf("Ok\n");
-	free(philo->m_display);
+	pthread_mutex_destroy(philo->m_display);
 	while (i < data->n_philo)
-	{
 		free(philo[i++].m_fork1);
-	}
 	free(philo);
 	free(data);
 }
@@ -96,7 +91,5 @@ int			main(int ac, char **av)
 	launch_philosophers(data, philo);
 	monitor(data, philo);
 	free_philosophers(data, philo);
-	while (1)
-		;
 	return (0);
-}
+} 

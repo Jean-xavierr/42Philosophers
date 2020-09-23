@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display_emoji.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 11:39:06 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/22 16:48:53 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/23 12:46:44 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void		display_all_meals_ate(t_data *data)
 	if (data->option)
 	{
 		display_time(data->option, time);
-		ft_printf("%u          "COLOR_GREEN"all the meals ate 🙇", time);
-		ft_printf(COLOR_RESET" |\n");
+		ft_printf("%u          "COLOR_GREEN"  all the meals ate 🙇", time);
+		ft_printf(COLOR_RESET"   |\n");
 		ft_printf("└------------------------------------------┘\n\n");
 	}
 	else
@@ -44,19 +44,24 @@ void		display_all_meals_ate(t_data *data)
 void		print_id_philo(t_philo *philo)
 {
 	int		i;
+	int		n;
 	char	**id_emoji;
 	char	*id;
 
 	i = len_nb(philo->id);
 	id_emoji = uitoemoji(philo->id);
 	id = ft_strtabtostr(id_emoji);
+	n = 0;
+	while (id_emoji[n])
+		free(id_emoji[n++]);
 	free(id_emoji);
 	if (i == 1)
-		ft_printf("    %s    ", id);
+		ft_printf("     %s    ", id);
 	else if (i == 2)
-		ft_printf("   %s   ", id);
+		ft_printf("    %s   ", id);
 	else if (i == 3)
-		ft_printf("  %s  ", id);
+		ft_printf("   %s  ", id);
+	free(id);
 }
 
 void		display_visual(void)

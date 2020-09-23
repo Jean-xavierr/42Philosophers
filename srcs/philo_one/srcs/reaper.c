@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 17:29:33 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/23 10:55:30 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/23 12:09:12 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void		*reaper(void *stock)
 	philo = s->philo;
 	usleep(data->t_die * ONE_MILLISEC);
 	current_time = get_time(data->t_start_usec, data->t_start_sec);
-	if (current_time - philo->last_meal > data->t_die)
+	if (current_time - philo->last_meal >= data->t_die)
 	{
 		pthread_mutex_lock(philo->m_display);
 		data->one_die = TRUE;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo_one.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 12:08:00 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/22 16:19:26 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/23 12:52:09 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,7 @@ void						display_visual_die(t_data *data, t_philo *philo,
 void						display_light_die(t_data *data, t_philo *philo,
 							unsigned int time);
 void						display_all_meals_ate(t_data *data);
+void						display_light_all_meals_ate(t_data *data,
+							t_philo *philo, unsigned int time);
 
 #endif

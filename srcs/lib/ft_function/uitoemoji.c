@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   uitoemoji.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 15:44:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/22 12:54:34 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/23 12:43:21 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,8 @@ int			get_emoji_nb(int nb, char **emoji_nb, char **emojis)
 		}
 		else
 		{
-			emoji_nb[i] = ft_strjoindel(emojis[nb], " ", 0);
+			emoji_nb[i] = ft_strjoindel(ft_strjoindel(emoji_nb[i],
+			emojis[nb], 1), " ", 1);
 			nb = nb / 10;
 		}
 		i++;
@@ -102,6 +103,7 @@ char		**ft_strtab_swap(char **emoji_nb, int i)
 char		**uitoemoji(unsigned int nb)
 {
 	int		i;
+	int		n;
 	char	**emojis;
 	char	**emoji_nb;
 
@@ -111,5 +113,9 @@ char		**uitoemoji(unsigned int nb)
 		return (emojis);
 	i = get_emoji_nb(nb, emoji_nb, emojis);
 	ft_strtab_swap(emoji_nb, i);
+	n = 0;
+	while (n <= 9)
+		free(emojis[n++]);
+	free(emojis);
 	return (emoji_nb);
 }
