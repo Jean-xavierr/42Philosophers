@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 11:59:22 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/23 12:57:08 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/23 13:01:11 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,4 @@ int			main(int ac, char **av)
 	monitor(data, philo);
 	free_philosophers(data, philo);
 	return (0);
-} 
+}

@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:32:28 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/23 12:53:01 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/23 13:04:13 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ void		display_light_die(t_data *data, t_philo *philo, unsigned int time)
 	ft_printf("%u %u is died\n", time, philo->id);
 }
 
-void		display_light_all_meals_ate(t_data *data, t_philo *philo, unsigned int time)
+void		display_light_all_meals_ate(t_data *data, t_philo *philo,
+unsigned int time)
 {
 	display_time(data->option, time);
-	ft_printf("%u %u all the meals ate\n", time, philo->id);	
+	ft_printf("%u %u all the meals ate\n", time, philo->id);
 }
 
 void		display_time(t_bool option, unsigned int time)
@@ -54,7 +55,7 @@ void		display_time(t_bool option, unsigned int time)
 void		display_manager(t_stock *s, t_philo *philo, char *event)
 {
 	unsigned int current_time;
-	
+
 	current_time = get_time(s->data->t_start_usec, s->data->t_start_sec);
 	display_time(s->data->option, current_time);
 	if (s->data->option == FALSE)
