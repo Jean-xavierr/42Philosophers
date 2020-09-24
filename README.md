@@ -15,9 +15,28 @@ __Project duration__ : in work ⏳
 
 ## Installation 🖥
 
- __*In build*__   
+To test the project, go to one of the folders __*philo_one*__, __*philo_two*__ or __*philo_three*__ and make a `make`
 
-*I'm working on this project, I update this readme every day, you can check the to do list*
+Then, you can test the project using an executable.
+
+__usage :__
+
+`./philo_one number_philosopher time_to_die time_to_eat time_to_sleep [number_of_time_each_philosophers_must_eat]`
+
+arguments in square brackets are not required (number_of_time_each_philosophers_must_eat)
+
+__exemple :__
+
+`./philo_one 4 500 200 200`
+
+I made a visual option, which makes it possible to have a prettier display, which reduces performance a little.
+To use it, add the option __*-v*__ after the executable, this option is only available on __*philo_one*__
+
+__exemple :__
+
+`./philo_one -v 4 500 200 200`
+
+![alt text](https://zupimages.net/up/20/39/8a98.png)
 
 ## Tips project
 
@@ -30,11 +49,9 @@ __Project duration__ : in work ⏳
 
  __*In build*__   
 
-*I'm working on this project, I update this readme every day, you can check the to do list*
+
 
 ## Project documentation 📚
-
- __*In build*__   
 
  __*[Use pthread (pthread_create | pthread_join) EN video](https://www.youtube.com/watch?v=uA8X5zNOGw8&list=PL9IEJIKnBJjFZxuqyJ9JqVYmuFZHr7CFM&index=2&t=0s)*__
  
@@ -42,14 +59,14 @@ __Project duration__ : in work ⏳
 
 __*[Semaphore EN video](https://www.youtube.com/watch?v=ukM_zzrIeXs)*__
 
+__*[Fork explain in FR](https://www.commentcamarche.net/faq/10611-que-fait-un-fork)*__
 
-*I'm working on this project, I update this readme every day, you can check the to do list*
 
 ## To do list
 
 - [ ] ReadMe
-- [ ] Philo_one
-- [ ] Philo_two
+- [X] Philo_one
+- [X] Philo_two
 - [ ] Philo_three
 - [ ] Testing script
 
