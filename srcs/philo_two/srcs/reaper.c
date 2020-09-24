@@ -6,12 +6,11 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 15:02:25 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/24 15:43:30 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/24 17:50:48 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philo_two.h"
-
 
 void		*reaper(void *stock)
 {
@@ -29,7 +28,7 @@ void		*reaper(void *stock)
 	{
 		sem_wait(philo->sem_display);
 		data->one_die = TRUE;
-		display_manager(s , philo, EVENT_DEAD);
+		display_manager(s, philo, EVENT_DEAD);
 	}
 	return (NULL);
 }

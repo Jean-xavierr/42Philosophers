@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 11:54:30 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/24 15:28:57 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/24 17:50:01 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void		init_philosopher(unsigned int n_philo, t_philo *philo)
 {
-	unsigned int 	i;
-	sem_t 			*sem_forks;
-	sem_t 			*sem_display;
+	unsigned int	i;
+	sem_t			*sem_forks;
+	sem_t			*sem_display;
 
 	i = 0;
 	sem_unlink("fork");

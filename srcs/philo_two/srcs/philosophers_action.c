@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 12:31:22 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/24 14:59:38 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/24 17:52:56 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void		philo_eat(t_stock *s, t_philo *philo)
 	usleep(s->data->t_eat * ONE_MILLISEC);
 	sem_post(philo->sem_forks);
 	sem_post(philo->sem_forks);
-
 }
 
 void		philo_sleep(t_stock *stock, t_philo *philo)

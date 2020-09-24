@@ -6,13 +6,13 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 12:33:12 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/24 15:31:43 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/24 17:54:26 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philo_two.h"
 
-void		display_all_meals_ate(t_data *data, t_philo *philo)
+void		display_all_meals_ate(t_data *data)
 {
 	char			*time;
 	char			*dot;
