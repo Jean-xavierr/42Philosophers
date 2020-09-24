@@ -6,13 +6,13 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:32:28 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/24 11:30:26 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/24 15:12:48 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philo_one.h"
 
-void		display_light_die(t_data *data, t_philo *philo, unsigned int time)
+void		display_light_dead(t_data *data, t_philo *philo, unsigned int time)
 {
 	display_time(data->option, time);
 	ft_printf("%u %u is dead\n", time, philo->id);

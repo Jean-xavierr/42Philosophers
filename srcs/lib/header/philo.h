@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:27:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/23 15:08:52 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/24 15:12:12 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 # define EVENT_EAT		"is eating"
 # define EVENT_SLEEP	"is sleeping"
 # define EVENT_THINK	"is thinking"
-# define EVENT_DIE		"is died"
+# define EVENT_DEAD		"is dead"
 
 # define ONE_MILLISEC 	1000
 

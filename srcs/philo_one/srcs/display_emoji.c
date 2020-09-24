@@ -6,13 +6,13 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 11:39:06 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/24 11:30:34 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/24 15:15:28 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philo_one.h"
 
-void		display_visual_die(t_data *data, t_philo *philo, unsigned int time)
+void		display_emoji_dead(t_data *data, t_philo *philo, unsigned int time)
 {
 	display_time(data->option, time);
 	ft_printf("%u ", time);
@@ -56,11 +56,11 @@ void		print_id_philo(t_philo *philo)
 		free(id_emoji[n++]);
 	free(id_emoji);
 	if (i == 1)
-		ft_printf("     %s    ", id);
+		ft_printf("    %s    ", id);
 	else if (i == 2)
-		ft_printf("    %s   ", id);
+		ft_printf("   %s   ", id);
 	else if (i == 3)
-		ft_printf("   %s  ", id);
+		ft_printf("  %s  ", id);
 	free(id);
 }
 

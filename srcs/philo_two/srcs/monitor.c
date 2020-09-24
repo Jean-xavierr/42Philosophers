@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/22 13:00:09 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/24 15:41:39 by jereligi         ###   ########.fr       */
+/*   Created: 2020/09/24 15:16:46 by jereligi          #+#    #+#             */
+/*   Updated: 2020/09/24 15:42:56 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/philo_one.h"
+#include "../header/philo_two.h"
 
 void		kill_philosophers(t_data *data, t_philo *philo)
 {
@@ -38,16 +38,10 @@ void		monitor_meals(t_data *data, t_philo *philo)
 		usleep(ONE_MILLISEC);
 	if (data->one_die == 1 || (data->meals_finish == data->n_philo))
 		kill_philosophers(data, philo);
-	if (data->option && data->meals_finish == data->n_philo)
+	if (data->meals_finish == data->n_philo)
 	{
-		pthread_mutex_lock(philo->m_display);
-		display_all_meals_ate(data);
-	}
-	else if (!data->option && data->meals_finish == data->n_philo)
-	{
-		pthread_mutex_lock(philo->m_display);
-		time = get_time(data->t_start_usec, data->t_start_sec);
-		display_light_all_meals_ate(data, philo, time);
+		sem_wait(philo->sem_display);
+		display_all_meals_ate(data , philo);
 	}
 }
 
