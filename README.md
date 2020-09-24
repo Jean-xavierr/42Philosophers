@@ -7,22 +7,23 @@ And learn about mutexes, semaphores, and shared memory.
 
 ## Introduction
 
-Philosophers introduction in work .... 🐙
+In computer science, the dining philosophers problem is an example problem often used in concurrent algorithm design to illustrate synchronization issues and techniques for resolving them.
 
-__Project duration__ : in work ⏳
+It was originally formulated in *1965 by Edsger Dijkstra* as a student exam exercise, presented in terms of computers competing for access to tape drive peripherals. Soon after, Tony Hoare gave the problem its present formulation
+
+[More informations](https://en.wikipedia.org/wiki/Dining_philosophers_problem)
+
+__Project duration__ : 1 week ⏳
 
 *Tips and good methodology to do the project at the bottom of the readme*
 
 ## Installation 🖥
 
-To test the project, go to one of the folders __*philo_one*__, __*philo_two*__ or __*philo_three*__ and make a `make`
-
-Then, you can test the project using an executable.
+To test the project, go to one of the folders __*philo_one*__, __*philo_two*__ or __*philo_three*__ and make a `make`. Then, you can test the project using an executable.
 
 __usage :__
 
 `./philo_one number_philosopher time_to_die time_to_eat time_to_sleep [number_of_time_each_philosophers_must_eat]`
-
 arguments in square brackets are not required (number_of_time_each_philosophers_must_eat)
 
 __exemple :__
@@ -59,7 +60,7 @@ __exemple :__
 
 __*[Semaphore EN video](https://www.youtube.com/watch?v=ukM_zzrIeXs)*__
 
-__*[Fork explain in FR](https://www.commentcamarche.net/faq/10611-que-fait-un-fork)*__
+__*[Fork explain in FR](https://www.commentcamarche.net/faq/10611-que-fait-un-fork)*__ __*or*__ __*[Fork Wiki EN](https://en.wikipedia.org/wiki/Fork_(system_call))*__
 
 
 ## To do list
