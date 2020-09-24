@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display_light.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:32:28 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/23 16:03:34 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/24 11:30:26 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void		display_light_die(t_data *data, t_philo *philo, unsigned int time)
 {
 	display_time(data->option, time);
-	ft_printf("%u %u is died\n", time, philo->id);
+	ft_printf("%u %u is dead\n", time, philo->id);
 }
 
 void		display_light_all_meals_ate(t_data *data, t_philo *philo,

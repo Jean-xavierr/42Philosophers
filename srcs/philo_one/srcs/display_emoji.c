@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display_emoji.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 11:39:06 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/23 12:46:44 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/24 11:30:34 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		display_visual_die(t_data *data, t_philo *philo, unsigned int time)
 	display_time(data->option, time);
 	ft_printf("%u ", time);
 	print_id_philo(philo);
-	ft_printf(COLOR_RED "is died" COLOR_RESET);
+	ft_printf(COLOR_RED "is dead" COLOR_RESET);
 	ft_printf("             💀 |\n");
 	ft_printf("└------------------------------------------┘\n\n");
 }
