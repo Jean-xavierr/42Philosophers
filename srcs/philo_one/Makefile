@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+         #
+#    By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 17:12:34 by jereligi          #+#    #+#              #
-#    Updated: 2020/09/24 17:44:08 by jereligi         ###   ########.fr        #
+#    Updated: 2020/09/25 12:55:23 by Jeanxavier       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,13 +53,13 @@ SRCS_PRINTF = 		../lib/ft_printf/srcs/ft_itoa.c						\
 					../lib/ft_printf/srcs/ft_display_management.c		\
 					../lib/ft_printf/srcs/ft_flags_management_integer.c	\
 
-OBJ = $(_SRCS_PHILO_ONE:.c=.o)
+OBJ = $(SRCS_PHILO_ONE:.c=.o)
 
-OBJ_FT_FUNCTION = $(_SRCS_FT_FUCTION:.c=.o)
+OBJ_FT_FUNCTION = $(SRCS_FT_FUCTION:.c=.o)
 
-OBJ_PHILO = $(_SRCS_PHILO:.c=.o)
+OBJ_PHILO = $(SRCS_PHILO:.c=.o)
 
-OBJ_PRINTF = $(_SRCS_PRINTF:.c=.o)
+OBJ_PRINTF = $(SRCS_PRINTF:.c=.o)
 
 CC = gcc
 
@@ -67,8 +67,8 @@ CFLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 
-$(NAME) :	
-			$(CC) $(CFLAGS) -o $(NAME) $(SRCS_PHILO_ONE) $(SRCS_FT_FUCTION) $(SRCS_PHILO) $(SRCS_PRINTF)
+$(NAME) :	$(OBJ) $(OBJ_FT_FUNCTION) $(OBJ_PHILO) $(OBJ_PRINTF)
+			$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(OBJ_FT_FUNCTION) $(OBJ_PHILO) $(OBJ_PRINTF)
 
 clean : 
 			rm -rf $(OBJ) $(OBJ_FT_FUNCTION) $(OBJ_PHILO) $(OBJ_PRINTF)
