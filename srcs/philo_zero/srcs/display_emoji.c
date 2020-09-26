@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   display_emoji.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 11:39:06 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/24 15:15:28 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/26 20:53:37 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/philo_one.h"
+#include "../header/philo_zero.h"
 
 void		display_emoji_dead(t_data *data, t_philo *philo, unsigned int time)
 {

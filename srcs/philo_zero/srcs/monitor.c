@@ -6,11 +6,11 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 13:00:09 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/26 22:03:10 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/26 20:54:21 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/philo_one.h"
+#include "../header/philo_zero.h"
 
 void		kill_philosophers(t_data *data, t_philo *philo)
 {
@@ -38,9 +38,17 @@ void		monitor_meals(t_data *data, t_philo *philo)
 		usleep(ONE_MILLISEC);
 	if (data->one_die == 1 || (data->meals_finish == data->n_philo))
 		kill_philosophers(data, philo);
-	pthread_mutex_lock(philo->m_display);
-	time = get_time(data->t_start_usec, data->t_start_sec);
-	display_all_meals_ate(data);
+	if (data->option && data->meals_finish == data->n_philo)
+	{
+		pthread_mutex_lock(philo->m_display);
+		display_all_meals_ate(data);
+	}
+	else if (!data->option && data->meals_finish == data->n_philo)
+	{
+		pthread_mutex_lock(philo->m_display);
+		time = get_time(data->t_start_usec, data->t_start_sec);
+		display_light_all_meals_ate(data, philo, time);
+	}
 }
 
 void		monitor(t_data *data, t_philo *philo)

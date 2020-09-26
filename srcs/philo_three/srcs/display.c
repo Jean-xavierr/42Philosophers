@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/25 13:11:50 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/26 18:24:42 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/26 22:44:15 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void		display_manager(t_stock *s, t_philo *philo, char *event)
 	char			*dot;
 	char			*str;
 	unsigned int	current_time;
-
 
 	str = NULL;
 	current_time = get_time(s->data->t_start_usec, s->data->t_start_sec);

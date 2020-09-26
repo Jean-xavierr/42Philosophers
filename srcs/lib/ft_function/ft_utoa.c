@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 15:29:15 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/26 16:12:23 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/26 22:42:06 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void			ft_strrev(char *str)
 char			*ft_utoa(unsigned int n)
 {
 	int		i;
-	char 	*str;
+	char	*str;
 
 	if (n == 0)
 		return (ft_strdup("0"));

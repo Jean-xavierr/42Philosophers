@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 13:06:37 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/18 18:48:09 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/26 20:56:49 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdarg.h>
 # include <stdio.h>
-# include "../../header/philo.h"
+# include "../../../lib/header/philo.h"
 
 typedef struct		s_pdata
 {

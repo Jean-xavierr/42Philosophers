@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo_one.h                                        :+:      :+:    :+:   */
+/*   philo_zero.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 12:08:00 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/26 22:42:59 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/26 22:19:15 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_ONE_H
-# define PHILO_ONE_H
+#ifndef PHILO_ZERO_H
+# define PHILO_ZERO_H
 
 # include "../../lib/header/philo.h"
+# include "../ft_printf/includes/ft_printf.h"
 
 # define MICROSEC	0
 # define MILLESEC	1
@@ -41,9 +42,21 @@ void						philo_think(t_stock *stock, t_philo *philo);
 void						display_manager(t_stock *stock, t_philo *philo,
 							char *event);
 void						*reaper(void *stock);
-void						monitor(t_data *data, t_philo *philo);
-void						display_all_meals_ate(t_data *data);
-void						display_manager(t_stock *s, t_philo *philo,
+void						display_emoji(unsigned int time, t_philo *philo,
 							char *event);
+void						display_visual(void);
+void						display_time(t_bool option, unsigned int time);
+void						print_id_philo(t_philo *philo);
+int							len_nb(unsigned int nb);
+void						monitor(t_data *data, t_philo *philo);
+
+void						display_light_dead(t_data *data, t_philo *philo,
+							unsigned int time);
+void						display_emoji_dead(t_data *data, t_philo *philo,
+							unsigned int time);
+void						display_all_meals_ate(t_data *data);
+void						display_light_all_meals_ate(t_data *data,
+							t_philo *philo, unsigned int time);
+void						print_error_not_enought_argv(int nb);
 
 #endif

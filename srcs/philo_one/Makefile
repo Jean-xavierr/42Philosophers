@@ -5,18 +5,23 @@
 #                                                     +:+ +:+         +:+      #
 #    By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/09/24 17:12:34 by jereligi          #+#    #+#              #
-#    Updated: 2020/09/25 12:55:23 by Jeanxavier       ###   ########.fr        #
+#    Created: 2020/09/26 22:00:15 by Jeanxavier        #+#    #+#              #
+#    Updated: 2020/09/26 22:27:49 by Jeanxavier       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+UNAME := $(shell uname)
+
+ifeq ($(UNAME), Linux)
+	CFLAGS += -lpthread -pthread
+endif
 
 NAME = philo_one
 
 SRCS_PHILO_ONE = 	srcs/reaper.c 				\
+					srcs/display.c				\
 					srcs/monitor.c				\
 					srcs/philosophers.c			\
-					srcs/display_emoji.c		\
-					srcs/display_light.c		\
 					srcs/init_philosophers.c	\
 					srcs/philosophers_action.c	\
 
@@ -38,28 +43,11 @@ SRCS_PHILO =		../lib/srcs_philosophers/parsing.c			\
 					../lib/srcs_philosophers/data_manager.c		\
 					../lib/srcs_philosophers/check_argument.c 	\
 
-SRCS_PRINTF = 		../lib/ft_printf/srcs/ft_itoa.c						\
-					../lib/ft_printf/srcs/ft_itox.c						\
-					../lib/ft_printf/srcs/ft_ultox.c					\
-					../lib/ft_printf/srcs/ft_utils.c					\
-					../lib/ft_printf/srcs/ft_printf.c					\
-					../lib/ft_printf/srcs/ft_check_set.c				\
-					../lib/ft_printf/srcs/ft_get_strlen.c				\
-					../lib/ft_printf/srcs/ft_check_flags.c				\
-					../lib/ft_printf/srcs/ft_strjoin_char.c				\
-					../lib/ft_printf/srcs/ft_unsigned_itoa.c			\
-					../lib/ft_printf/srcs/ft_exception_flag.c			\
-					../lib/ft_printf/srcs/ft_flags_management.c			\
-					../lib/ft_printf/srcs/ft_display_management.c		\
-					../lib/ft_printf/srcs/ft_flags_management_integer.c	\
-
 OBJ = $(SRCS_PHILO_ONE:.c=.o)
 
 OBJ_FT_FUNCTION = $(SRCS_FT_FUCTION:.c=.o)
 
 OBJ_PHILO = $(SRCS_PHILO:.c=.o)
-
-OBJ_PRINTF = $(SRCS_PRINTF:.c=.o)
 
 CC = gcc
 
@@ -67,11 +55,10 @@ CFLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 
-$(NAME) :	$(OBJ) $(OBJ_FT_FUNCTION) $(OBJ_PHILO) $(OBJ_PRINTF)
-			$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(OBJ_FT_FUNCTION) $(OBJ_PHILO) $(OBJ_PRINTF)
-
+$(NAME) :	$(OBJ) $(OBJ_FT_FUNCTION) $(OBJ_PHILO)
+			$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(OBJ_FT_FUNCTION) $(OBJ_PHILO)
 clean : 
-			rm -rf $(OBJ) $(OBJ_FT_FUNCTION) $(OBJ_PHILO) $(OBJ_PRINTF)
+			rm -rf $(OBJ) $(OBJ_FT_FUNCTION) $(OBJ_PHILO)
 
 fclean :	clean
 			rm -rf $(NAME)

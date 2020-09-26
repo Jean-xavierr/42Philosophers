@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 13:27:31 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/24 15:12:12 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/26 22:25:07 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
 
-# include "../ft_printf/includes/ft_printf.h"
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
@@ -69,7 +68,7 @@ typedef	struct				s_stock
 void						print_usage(void);
 void						print_error_more_arg(void);
 int							parsing_manager(t_data *data);
-void						print_error_not_enought_arg(int nb);
+void						print_error_not_enought_arg(void);
 int							data_manager(int ac, char **av, t_data *data);
 int							check_argument(int ac, char **av, int *prog_arg);
 unsigned int				get_time_start(int time);

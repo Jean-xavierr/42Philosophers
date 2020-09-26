@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/25 15:38:40 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/26 22:45:11 by Jeanxavier       ###   ########.fr       */
+/*   Created: 2020/09/21 17:29:33 by jereligi          #+#    #+#             */
+/*   Updated: 2020/09/26 20:54:52 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/philo_three.h"
+#include "../header/philo_zero.h"
 
 void		*reaper(void *stock)
 {
@@ -26,10 +26,12 @@ void		*reaper(void *stock)
 	current_time = get_time(data->t_start_usec, data->t_start_sec);
 	if (current_time - philo->last_meal >= data->t_die)
 	{
-		sem_wait(philo->sem_display);
+		pthread_mutex_lock(philo->m_display);
 		data->one_die = TRUE;
-		display_manager(s, philo, EVENT_DEAD);
-		exit(42);
+		if (!data->option)
+			display_light_dead(data, philo, current_time);
+		else
+			display_emoji_dead(data, philo, current_time);
 	}
 	return (NULL);
 }

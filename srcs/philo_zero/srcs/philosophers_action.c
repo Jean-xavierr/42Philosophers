@@ -6,11 +6,11 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 12:28:05 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/26 22:15:56 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/26 20:54:42 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/philo_one.h"
+#include "../header/philo_zero.h"
 
 void		philo_take_fork(t_stock *stock, t_philo *philo)
 {

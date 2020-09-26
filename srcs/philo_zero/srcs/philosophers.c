@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 11:35:22 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/26 22:37:27 by Jeanxavier       ###   ########.fr       */
+/*   Created: 2020/09/11 11:59:22 by Jeanxavier        #+#    #+#             */
+/*   Updated: 2020/09/26 20:57:03 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/philo_two.h"
+#include "../header/philo_zero.h"
 
 void		*life_philosophers(void *stock)
 {
@@ -51,15 +51,29 @@ int			launch_philosophers(t_data *data, t_philo *philo)
 	data->t_start_usec = get_time_start(MICROSEC);
 	data->t_start_sec = get_time_start(MILLESEC);
 	i = 0;
+	if (data->option == TRUE)
+		display_visual();
 	while (i < data->n_philo)
 	{
 		stock->philo = &philo[i];
 		if (pthread_create(&philo[i].thread, NULL, &life_philosophers, stock))
 			return (1);
-		usleep(20);
+		usleep(35);
 		i++;
 	}
 	return (0);
+}
+
+void		free_philosophers(t_data *data, t_philo *philo)
+{
+	unsigned int i;
+
+	i = 0;
+	pthread_mutex_destroy(philo->m_display);
+	while (i < data->n_philo)
+		free(philo[i++].m_fork1);
+	free(philo);
+	free(data);
 }
 
 int			main(int ac, char **av)
@@ -76,7 +90,6 @@ int			main(int ac, char **av)
 	init_philosopher(data->n_philo, philo);
 	launch_philosophers(data, philo);
 	monitor(data, philo);
-	free(philo);
-	free(data);
+	free_philosophers(data, philo);
 	return (0);
 }

@@ -6,12 +6,12 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 18:00:14 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/26 14:44:09 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/26 22:43:32 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __PHILO_TWO_H
-# define __PHILO_TWO_H
+#ifndef __PHILO_THREE_H
+# define __PHILO_THREE_H
 
 # include "../../lib/header/philo.h"
 
@@ -44,6 +44,5 @@ void						display_manager(t_stock *s, t_philo *philo,
 void						display_all_meals_ate(t_data *data);
 void						*reaper(void *stock);
 void						monitor(t_data *data, t_philo *philo);
-
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reaper.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 17:29:33 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/24 15:14:23 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/26 21:58:56 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ void		*reaper(void *stock)
 	{
 		pthread_mutex_lock(philo->m_display);
 		data->one_die = TRUE;
-		if (!data->option)
-			display_light_dead(data, philo, current_time);
-		else
-			display_emoji_dead(data, philo, current_time);
+		display_manager(s, philo, EVENT_DEAD);
 	}
 	return (NULL);
 }

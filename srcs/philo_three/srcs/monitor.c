@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/25 15:40:13 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/26 18:26:53 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/26 22:43:57 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void		kill_philosophers(t_data *data, t_philo *philo)
 void		monitor_die(t_data *data, t_philo *philo)
 {
 	unsigned int		i;
-	int		status;
+	int					status;
 
 	i = 0;
 	while (i < data->n_philo)
@@ -42,7 +42,6 @@ void		monitor_die(t_data *data, t_philo *philo)
 	kill_philosophers(data, philo);
 	if (WEXITSTATUS(status) == 2)
 		display_all_meals_ate(data);
-
 }
 
 void		monitor(t_data *data, t_philo *philo)

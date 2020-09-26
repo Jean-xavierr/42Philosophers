@@ -6,11 +6,11 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 11:02:28 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/26 21:40:42 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/26 20:54:16 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/philo_one.h"
+#include "../header/philo_zero.h"
 
 void		init_mutex_fork(t_philo *philo, int n_philo)
 {

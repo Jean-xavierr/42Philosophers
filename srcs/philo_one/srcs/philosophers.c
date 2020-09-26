@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 11:59:22 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/25 13:05:28 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/26 22:36:00 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,12 @@ int			launch_philosophers(t_data *data, t_philo *philo)
 	data->t_start_usec = get_time_start(MICROSEC);
 	data->t_start_sec = get_time_start(MILLESEC);
 	i = 0;
-	if (data->option == TRUE)
-		display_visual();
 	while (i < data->n_philo)
 	{
 		stock->philo = &philo[i];
 		if (pthread_create(&philo[i].thread, NULL, &life_philosophers, stock))
 			return (1);
-		usleep(35);
+		usleep(10);
 		i++;
 	}
 	return (0);
