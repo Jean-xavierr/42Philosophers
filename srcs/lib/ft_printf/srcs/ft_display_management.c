@@ -69,11 +69,11 @@ void		ft_print_number(t_pdata *data)
 
 	tmp = NULL;
 	if (data->convers == 'd' || data->convers == 'i')
-		tmp = ft_itoa((int)data->arg);
+		tmp = ft_itoa((long)data->arg);
 	else if (data->convers == 'u')
-		tmp = ft_unsigned_itoa((unsigned int)data->arg);
+		tmp = ft_unsigned_itoa((unsigned long)data->arg);
 	else if (data->convers == 'x' || data->convers == 'X')
-		tmp = ft_itox((unsigned int)data->arg, data);
+		tmp = ft_itox((unsigned long)data->arg, data);
 	else if (data->convers == 'p')
 		tmp = ft_ultox((unsigned long)data->arg);
 	ft_putstr(tmp, data);
@@ -82,8 +82,11 @@ void		ft_print_number(t_pdata *data)
 
 void		ft_display_management(t_pdata *data)
 {
+	char *c;
+
+	c = (char *)data->arg;
 	if (data->convers == 'c')
-		ft_putchar((char)data->arg, data);
+		ft_putchar(c[0], data);
 	else if (data->convers == 's')
 		ft_putstr((char *)data->arg, data);
 	else if (data->convers == 'd' || data->convers == 'i' ||

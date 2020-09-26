@@ -62,7 +62,7 @@ OBJ_PRINTF = $(SRCS_PRINTF:.c=.o)
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -lpthread -pthread
 
 all : $(NAME)
 

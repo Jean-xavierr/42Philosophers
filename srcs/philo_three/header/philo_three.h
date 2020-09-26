@@ -20,6 +20,8 @@
 
 # include <semaphore.h>
 # include <signal.h>
+# include <sys/wait.h>
+# include <fcntl.h>
 
 typedef struct				s_philo
 {

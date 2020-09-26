@@ -17,9 +17,9 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
-# include <pthread.h>
 # include <sys/time.h>
 # include <stdio.h>
+# include <pthread.h>
 
 # define COLOR_RED		"\x1b[31m"
 # define COLOR_GREEN	"\x1b[32m"

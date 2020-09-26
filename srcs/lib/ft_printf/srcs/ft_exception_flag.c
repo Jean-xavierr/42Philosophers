@@ -34,7 +34,7 @@ void		ft_exception_flag_zero_integer(t_pdata *data)
 	while (((precision-- > data->width && precision >= len_nb) ||
 		(width-- >= len_nb)) || precision >= len_nb)
 		ft_putchar('0', data);
-	s = ft_itoa((int)data->arg);
+	s = ft_itoa((long)data->arg);
 	ft_putstr(&s[1], data);
 }
 
@@ -45,7 +45,7 @@ int			ft_nb_is_negative(t_pdata *data)
 	str_nb = 0;
 	if (data->convers == 'd' || data->convers == 'i')
 	{
-		str_nb = ft_itoa((int)data->arg);
+		str_nb = ft_itoa((long)data->arg);
 		if (str_nb[0] == '-')
 			return (1);
 	}
