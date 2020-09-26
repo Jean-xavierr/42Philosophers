@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 18:01:38 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/25 17:17:10 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/26 16:13:14 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ int			main(int ac, char **av)
 	init_philosopher(data->n_philo, philo);
 	launch_philosophers(data, philo);
 	monitor(data, philo);
-	free(philo);
-	free(data);
 	sem_close(philo->sem_forks);
 	sem_close(philo->sem_display);
+	free(philo);
+	free(data);
 	return (0);
 }
