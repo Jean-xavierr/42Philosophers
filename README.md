@@ -31,11 +31,11 @@ __exemple :__
 `./philo_one 4 500 200 200`
 
 I made a visual option, which makes it possible to have a prettier display, which reduces performance a little.
-To use it, add the option __*-v*__ after the executable, this option is only available on __*philo_one*__
+To use it, add the option __*-v*__ after the executable, this option is only available on __*philo_zero*__ (philo zero is identical to philo one, but it can handle the [-v] option)
 
 __exemple :__
 
-`./philo_one -v 4 500 200 200`
+`./philo_zero -v 4 500 200 200`
 
 ![alt text](https://zupimages.net/up/20/39/8a98.png)
 
@@ -65,10 +65,10 @@ __*[Fork explain in FR](https://www.commentcamarche.net/faq/10611-que-fait-un-fo
 
 ## To do list
 
-- [ ] ReadMe
+- [X] ReadMe
 - [X] Philo_one
 - [X] Philo_two
-- [ ] Philo_three
+- [X] Philo_three
 - [ ] Testing script
 
 
