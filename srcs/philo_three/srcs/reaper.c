@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/25 15:38:40 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/25 17:10:14 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/26 18:23:45 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		*reaper(void *stock)
 		sem_wait(philo->sem_display);
 		data->one_die = TRUE;
 		display_manager(s, philo, EVENT_DEAD);
+		exit (42);
 	}
-	// sem_post(philo->sem_display);
 	return (NULL);
 }

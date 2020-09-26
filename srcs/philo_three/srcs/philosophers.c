@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 18:01:38 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/26 16:13:14 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/26 18:41:59 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void		life_philosophers(t_stock *s, t_philo *philo)
 		philo_think(s, philo);
 		i++;
 	}
-	ft_printf("FIN");
 	pthread_detach(death);
 	if (data->one_die)
 		exit(42);
@@ -59,6 +58,7 @@ int			launch_philosophers(t_data *data, t_philo *philo)
 		usleep(35);
 		i++;
 	}
+	free(stock);
 	return (0);
 }
 
@@ -76,8 +76,6 @@ int			main(int ac, char **av)
 	init_philosopher(data->n_philo, philo);
 	launch_philosophers(data, philo);
 	monitor(data, philo);
-	sem_close(philo->sem_forks);
-	sem_close(philo->sem_display);
 	free(philo);
 	free(data);
 	return (0);

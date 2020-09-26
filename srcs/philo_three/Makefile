@@ -6,7 +6,7 @@
 #    By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/26 15:29:10 by Jeanxavier        #+#    #+#              #
-#    Updated: 2020/09/26 15:29:42 by Jeanxavier       ###   ########.fr        #
+#    Updated: 2020/09/26 17:55:39 by Jeanxavier       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,8 @@ OBJ_PRINTF = $(SRCS_PRINTF:.c=.o)
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -lpthread -pthread
+CFLAGS = -Wall -Wextra -Werror 
+# -lpthread -pthread
 
 all : $(NAME)
 

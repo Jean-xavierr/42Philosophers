@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers_action.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 12:31:22 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/24 17:52:56 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/26 18:34:48 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

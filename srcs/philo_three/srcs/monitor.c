@@ -6,7 +6,7 @@
 /*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/25 15:40:13 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/26 14:45:12 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/26 18:26:53 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void		monitor_die(t_data *data, t_philo *philo)
 		waitpid(philo[i].pid, &status, WNOHANG);
 		if (WIFEXITED(status))
 		{
-			ft_printf("\nFiston is dead %d\n", WEXITSTATUS(status));
 			if (WEXITSTATUS(status) == 42 || WEXITSTATUS(status) == 2)
 				break ;
 		}
@@ -48,6 +47,5 @@ void		monitor_die(t_data *data, t_philo *philo)
 
 void		monitor(t_data *data, t_philo *philo)
 {
-
 	monitor_die(data, philo);
 }

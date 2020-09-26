@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo_two.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 11:35:54 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/24 17:54:32 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/26 17:55:20 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # define MILLESEC	1
 
 # include <semaphore.h>
+# include <signal.h>
+# include <sys/wait.h>
+# include <fcntl.h>
 
 typedef struct				s_philo
 {
