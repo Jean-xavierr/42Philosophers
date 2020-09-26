@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 11:35:22 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/24 17:49:14 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/25 13:05:19 by Jeanxavier       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int			launch_philosophers(t_data *data, t_philo *philo)
 		stock->philo = &philo[i];
 		if (pthread_create(&philo[i].thread, NULL, &life_philosophers, stock))
 			return (1);
-		usleep(50);
+		usleep(35);
 		i++;
 	}
 	return (0);
