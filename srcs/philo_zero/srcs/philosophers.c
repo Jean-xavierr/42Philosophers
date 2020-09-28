@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 11:59:22 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/26 20:57:03 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/28 16:32:58 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int			launch_philosophers(t_data *data, t_philo *philo)
 	unsigned int	i;
 	t_stock			*stock;
 
-	if (!(stock = (t_stock *)malloc(sizeof(t_stock))))
+	if (!(stock = (t_stock *)malloc(sizeof(t_stock) * (data->n_philo + 1))))
 		return (0);
 	stock->data = data;
 	data->t_start_usec = get_time_start(MICROSEC);
@@ -55,8 +55,9 @@ int			launch_philosophers(t_data *data, t_philo *philo)
 		display_visual();
 	while (i < data->n_philo)
 	{
-		stock->philo = &philo[i];
-		if (pthread_create(&philo[i].thread, NULL, &life_philosophers, stock))
+		stock[i].philo = &philo[i];
+		stock[i].data = data;
+		if (pthread_create(&philo[i].thread, NULL, &life_philosophers, &stock[i]))
 			return (1);
 		usleep(35);
 		i++;

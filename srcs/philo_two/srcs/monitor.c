@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 15:16:46 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/28 11:44:36 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/28 14:56:37 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void		monitor_meals(t_data *data, t_philo *philo)
 		usleep(ONE_MILLISEC);
 	if (data->one_die == 1 || (data->meals_finish == data->n_philo))
 		kill_philosophers(data, philo);
-	if (data->meals_finish == data->n_philo)
+	if (!data->one_die && data->meals_finish == data->n_philo)
 	{
 		sem_wait(philo->sem_display);
 		display_all_meals_ate(data);
