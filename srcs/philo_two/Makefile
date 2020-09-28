@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+         #
+#    By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 17:53:32 by jereligi          #+#    #+#              #
-#    Updated: 2020/09/26 22:28:14 by Jeanxavier       ###   ########.fr        #
+#    Updated: 2020/09/28 16:44:36 by jereligi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 UNAME := $(shell uname)
 
 ifeq ($(UNAME), Linux)
-	CFLAGS += -lpthread -pthread
+	CFLAGS += -pthread
 endif
 
 NAME = philo_two
@@ -51,7 +51,7 @@ OBJ_PHILO = $(SRCS_PHILO:.c=.o)
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS += -Wall -Wextra -Werror
 
 all : $(NAME)
 

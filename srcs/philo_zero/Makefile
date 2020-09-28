@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+         #
+#    By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 17:12:34 by jereligi          #+#    #+#              #
-#    Updated: 2020/09/26 22:28:21 by Jeanxavier       ###   ########.fr        #
+#    Updated: 2020/09/28 16:44:46 by jereligi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 UNAME := $(shell uname)
 
 ifeq ($(UNAME), Linux)
-	CFLAGS += -lpthread -pthread
+	CFLAGS += -pthread
 endif
 
 NAME = philo_zero
@@ -69,7 +69,7 @@ OBJ_PRINTF = $(SRCS_PRINTF:.c=.o)
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS += -Wall -Wextra -Werror
 
 all : $(NAME)
 
