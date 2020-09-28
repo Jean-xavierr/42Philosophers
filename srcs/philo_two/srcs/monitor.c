@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 15:16:46 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/24 17:54:38 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/28 11:44:36 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,6 @@ void		monitor_die(t_data *data, t_philo *philo)
 
 void		monitor_meals(t_data *data, t_philo *philo)
 {
-	unsigned int	time;
-
-	time = 0;
 	while (!data->one_die && (data->meals_finish < data->n_philo))
 		usleep(ONE_MILLISEC);
 	if (data->one_die == 1 || (data->meals_finish == data->n_philo))

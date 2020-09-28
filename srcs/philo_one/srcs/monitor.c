@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   monitor.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 13:00:09 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/26 22:03:10 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/28 11:45:29 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,11 @@ void		monitor_die(t_data *data, t_philo *philo)
 
 void		monitor_meals(t_data *data, t_philo *philo)
 {
-	unsigned int	time;
-
-	time = 0;
 	while (!data->one_die && (data->meals_finish < data->n_philo))
 		usleep(ONE_MILLISEC);
 	if (data->one_die == 1 || (data->meals_finish == data->n_philo))
 		kill_philosophers(data, philo);
 	pthread_mutex_lock(philo->m_display);
-	time = get_time(data->t_start_usec, data->t_start_sec);
 	display_all_meals_ate(data);
 }
 
