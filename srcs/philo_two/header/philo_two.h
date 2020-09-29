@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo_two.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jeanxavier <Jeanxavier@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 11:35:54 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/26 17:55:20 by Jeanxavier       ###   ########.fr       */
+/*   Updated: 2020/09/29 12:04:24 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct				s_philo
 	unsigned int		id;
 	unsigned int		is_dead;
 	unsigned int		last_meal;
+	t_bool				life;
 }							t_philo;
 
 void						init_philosopher(unsigned int n_philo, t_philo

@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 11:35:22 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/28 16:29:01 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/29 12:13:18 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void		*life_philosophers(void *stock)
 	s = (t_stock *)stock;
 	data = s->data;
 	philo = s->philo;
+	philo->life = TRUE;
 	while (!data->one_die && (!data->meals || i < data->nb_meals))
 	{
 		pthread_detach(death);
@@ -34,6 +35,7 @@ void		*life_philosophers(void *stock)
 		philo_think(s, philo);
 		i++;
 	}
+	philo->life = FALSE;
 	pthread_detach(death);
 	if (data->meals && i == data->nb_meals)
 		data->meals_finish++;
@@ -55,9 +57,10 @@ int			launch_philosophers(t_data *data, t_philo *philo)
 	{
 		stock[i].philo = &philo[i];
 		stock[i].data = data;
-		if (pthread_create(&philo[i].thread, NULL, &life_philosophers, &stock[i]))
+		if (pthread_create(&philo[i].thread, NULL, &life_philosophers,
+			&stock[i]))
 			return (1);
-		usleep(20);
+		usleep(35);
 		i++;
 	}
 	return (0);

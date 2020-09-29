@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 12:08:00 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/28 15:22:25 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/29 12:00:54 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct				s_philo
 	unsigned int		id;
 	unsigned int		is_dead;
 	unsigned int		last_meal;
+	t_bool				life;
 }							t_philo;
 
 /*

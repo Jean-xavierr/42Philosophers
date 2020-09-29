@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 15:02:25 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/24 17:50:48 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/29 12:06:10 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void		*reaper(void *stock)
 	philo = s->philo;
 	usleep(data->t_die * ONE_MILLISEC);
 	current_time = get_time(data->t_start_usec, data->t_start_sec);
-	if (current_time - philo->last_meal >= data->t_die)
+	if (philo->life && current_time - philo->last_meal >= data->t_die)
 	{
 		sem_wait(philo->sem_display);
 		data->one_die = TRUE;
