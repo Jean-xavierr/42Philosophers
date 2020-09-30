@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/22 13:00:09 by jereligi          #+#    #+#             */
-/*   Updated: 2020/09/29 12:02:04 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/29 18:17:28 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void		monitor_meals(t_data *data, t_philo *philo)
 	{
 		pthread_mutex_lock(philo->m_display);
 		display_all_meals_ate(data);
+		free(philo->m_display);
 	}
 }
 

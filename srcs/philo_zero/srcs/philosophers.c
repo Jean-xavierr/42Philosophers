@@ -6,7 +6,7 @@
 /*   By: jereligi <jereligi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 11:59:22 by Jeanxavier        #+#    #+#             */
-/*   Updated: 2020/09/29 12:12:49 by jereligi         ###   ########.fr       */
+/*   Updated: 2020/09/30 15:45:57 by jereligi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,10 @@ void		*life_philosophers(void *stock)
 	return (NULL);
 }
 
-int			launch_philosophers(t_data *data, t_philo *philo)
+int			launch_philosophers(t_stock *stock, t_data *data, t_philo *philo)
 {
 	unsigned int	i;
-	t_stock			*stock;
 
-	if (!(stock = (t_stock *)malloc(sizeof(t_stock) * (data->n_philo + 1))))
-		return (0);
 	stock->data = data;
 	data->t_start_usec = get_time_start(MICROSEC);
 	data->t_start_sec = get_time_start(MILLESEC);
@@ -84,6 +81,7 @@ int			main(int ac, char **av)
 {
 	t_data		*data;
 	t_philo		*philo;
+	t_stock		*stock;
 
 	if (!(data = (t_data *)malloc(sizeof(t_data))))
 		return (0);
@@ -92,8 +90,11 @@ int			main(int ac, char **av)
 	if (!(philo = (t_philo *)malloc(sizeof(t_philo) * data->n_philo)))
 		return (0);
 	init_philosopher(data->n_philo, philo);
-	launch_philosophers(data, philo);
+	if (!(stock = (t_stock *)malloc(sizeof(t_stock) * (data->n_philo + 1))))
+		return (0);
+	launch_philosophers(stock, data, philo);
 	monitor(data, philo);
 	free_philosophers(data, philo);
+	free(stock);
 	return (0);
 }
